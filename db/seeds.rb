@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 categories = ["Vegetable", "Fruits", "Herb", "Seeds", "Homemdade Relish", "Others"]
+measurements = ["kg", "g", "pcs", "packs"]
 
 if Category.count == 0
    categories.each do |category|
@@ -14,3 +15,11 @@ if Category.count == 0
        puts "created #{category} category"
    end
 end
+
+if Measurement.count == 0
+   measurements.each do |measurement|
+       Measurement.create(name: measurement)
+       puts "created #{measurement} measurement"
+   end
+end
+
