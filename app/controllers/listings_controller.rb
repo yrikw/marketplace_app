@@ -1,6 +1,7 @@
 class ListingsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_listing, only: %i[ show edit update destroy ]
-  before_action :set_up, only: [:new, :edit]
+  before_action :set_form_vars, only: [:new, :edit]
 
   # GET /listings or /listings.json
   def index
@@ -63,7 +64,7 @@ class ListingsController < ApplicationController
       @listing = Listing.find(params[:id])
     end
 
-    def set_up
+    def set_form_vars
       @categories = Category.all
       @measurements = Measurement.all
     end
