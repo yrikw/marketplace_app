@@ -1,34 +1,21 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @listing.title %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @listing.price %>
-</p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @listing.category_id %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @listing.description %>
-</p>
-
-<p>
-  <strong>Quantity:</strong>
-  <%= @listing.quantity %>
-</p>
-
-<p>
-  <strong>Measurement:</strong>
-  <%= @listing.measurement_id %>
-</p>
-
-<%= link_to 'Edit', edit_listing_path(@listing) if current_user && current_user.id == @listing.user_id %> 
-<%= link_to 'Back', listings_path %>  
+<div class="container d-flex flex-column flex-md-row px-2 my-2 my-md-5">
+  <div class=" content col-12 col-md-7 col-lg-8 p-0 pr-md-3">
+     <div class="col-12 p-0 mb-4">
+       <%= image_tag "capsicum.jpg", alt: "capsicum", class: "thubnail card-img top" %>
+     </div>
+     </div>
+     <div class="col-lg-4 p-0 mx-2 d-md-block">
+       <h3 class="mb-sm-2 mb-md-2"><%= @listing.title %></h3>
+       <p>$<%= @listing.price %></p>
+       <p>Quantity <%= @listing.quantity %> <%= @listing.measurement.name %></p>
+       <br>
+       <p class="blockquote mt-2">ITEM INFO</p>
+       <%= @listing.description %>
+       <br>
+       <button class="btn btn-secondary btn-lg btn-block">BUY</button>
+       <div class="text-right">
+         <%= link_to 'Edit', edit_listing_path(@listing) if current_user && current_user.id == @listing.user_id %> /
+         <%= link_to 'Back', listings_path %>  
+</div> 
+      </div> 
+</div>
