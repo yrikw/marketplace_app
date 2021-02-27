@@ -23,3 +23,6 @@ if Measurement.count == 0
    end
 end
 
+if User.count == 0
+    User.create(email: "test@test.com", password: "111111", password_confirmation: "111111")
+end

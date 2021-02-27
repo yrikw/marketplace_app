@@ -1,6 +1,7 @@
 class ListingsController < ApplicationController
-  before_action :authenticate_user!
-  before_action :set_listing, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, except: [:show, :index]
+  before_action :set_listing, only: %i[ show ]
+  before_action :set_user_listing, only: [:update, :edit, :destroy]
   before_action :set_form_vars, only: [:new, :edit]
 
   # GET /listings or /listings.json
@@ -23,7 +24,7 @@ class ListingsController < ApplicationController
 
   # POST /listings or /listings.json
   def create
-    @listing = Listing.new(listing_params)
+    @listing = current_user.listings.new(listing_params)
 
     respond_to do |format|
       if @listing.save
@@ -62,6 +63,14 @@ class ListingsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_listing
       @listing = Listing.find(params[:id])
+    end
+
+    def set_user_listing
+      @listing = current_user.listings.find_by_id(params[:id])
+      if @listing == nil
+           flash[:alert] = "Please check your login details."
+           redirect_to listings_path
+      end
     end
 
     def set_form_vars
