@@ -11,24 +11,30 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group mb-3">
     <%= form.label :firstname %>
-    <%= form.text_field :firstname %>
+    <%= form.text_field :firstname, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group mb-3">
     <%= form.label :lastname %>
-    <%= form.text_field :lastname %>
+    <%= form.text_field :lastname, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group mb-3">
     <%= form.label :adress %>
-    <%= form.text_field :adress %>
+    <%= form.text_field :adress, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group mb-3">
     <%= form.label :description %>
-    <%= form.text_area :description %>
+    <%= form.text_area :description, class: "form-control" %>
+  </div>
+
+  <div class="form-group mb-3">
+    <%= form.label :picture, class: "form-label" %>
+    <%= form.file_field :picture, accept: "image/png, image/jpeg, image/jpg", class: "form-control-file" %>
+    <small class="form-text text-muted">PNG, JPEG and JPG only </small>
   </div>
 
   <div class="actions">

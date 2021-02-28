@@ -5,4 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_one :profile
   has_many :listings
+
+  def posts
+    return Post.where(user_id: self.id)
+  end
 end

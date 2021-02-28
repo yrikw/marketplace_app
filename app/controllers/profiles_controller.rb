@@ -8,12 +8,14 @@ class ProfilesController < ApplicationController
 
   # GET /profiles/1 or /profiles/1.json
   def show
+    user = @profile.user
+    @listings = Listing.where(user: user)
   end
 
   # GET /profiles/new
   def new
     if current_user.profile.present?
-      redirect_to current_user.profile, notice: 'You can only have one profile per user'     
+      redirect_to current_user.profile, notice: 'You can only have one profile.'     
     else
       @profile = Profile.new
     end
@@ -26,7 +28,7 @@ class ProfilesController < ApplicationController
   # POST /profiles or /profiles.json
   def create
     if current_user.profile.present?
-      redirect_to current_user.profile, notice: 'You can only have one profile per user'     
+      redirect_to current_user.profile, notice: 'You can only have one profile.'     
     end
     
     @profile = Profile.new(profile_params)
@@ -73,6 +75,6 @@ class ProfilesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def profile_params
-      params.require(:profile).permit(:firstname, :lastname, :adress, :description)
+      params.require(:profile).permit(:firstname, :lastname, :adress, :description, :picture)
     end
 end

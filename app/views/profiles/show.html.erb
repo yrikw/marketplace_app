@@ -10,15 +10,47 @@
   <%= @profile.lastname %>
 </p>
 
-<p>
+<% if current_user && current_user.id == @profile.user_id %>
+<p >
   <strong>Adress:</strong>
   <%= @profile.adress %>
 </p>
+<% end %>
 
 <p>
   <strong>Description:</strong>
   <%= @profile.description %>
 </p>
 
-<%= link_to 'Edit', edit_profile_path(@profile) %> |
-<%= link_to 'Back', profiles_path %>
+<%= link_to 'Edit', edit_profile_path(@profile) if current_user && current_user.id == @profile.user_id %>
+
+<h6><%= @profile.firstname %>'s item lists </h6>
+<div class="container">
+   <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-4">
+     <% @listings.each do |listing| %>
+       <div class="col mb-4">
+          <div class="card border-dark h-100">
+           <% if listing.picture.attached? %>
+                <%= image_tag listing.picture, class: "thumbnail card-img top" %>
+           <% else %>
+                <%= image_tag "capsicum.jpg", alt: "capsicum", class: "thubnail card-img top" %>
+           <% end %>
+             <div class="card-body">
+                <h5><%= listing.title %></h5>
+                <p class="xard-text text-secondary"><%= listing.description %></p>
+                <div class="d-flex justify-content-between">
+                  <%= link_to "See More", listing_path(listing.id), class: "btn btn-outline-primary"%>
+                  <h5>$<%= listing.price %></h5>
+                </div>
+                 <p class="card-subtitle my-2 text-muted text-right">Added <%= time_ago_in_words(listing.created_at) %> ago</p>
+             </div>
+          </div>
+       </div>
+     <% end %>      
+   </div>
+</div>
+
+<p class="text-right">/ <%= link_to 'Back', listings_path %> / </p>
+    
+  
+

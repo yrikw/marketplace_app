@@ -10,6 +10,7 @@
      </div>
      <div class="col-lg-4 p-0 mx-2 d-md-block">
        <h3 class="mb-sm-2 mb-md-2"><%= @listing.title %></h3>
+       <p class="text-right">Posted by <%= link_to @listing.user.profile.firstname, @listing.user.profile %></p><br>
        <p>$<%= @listing.price %></p>
        <p>Quantity <%= @listing.quantity %> <%= @listing.measurement.name %></p>
        <br>

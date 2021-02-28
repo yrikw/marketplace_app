@@ -6,16 +6,17 @@
           <%= link_to "Shop", listings_path, class: "nav-link" %>
         </li>
         <% if user_signed_in? %>
+        <li class="nav-item">
+        <% if current_user.profile.present? %>
+                  <li><%= link_to "Create Listing", new_listing_path, class: "nav-link" %></li>
+        <% end %>
+        </li>
         <li  class="nav-item">
         <% if current_user.profile.present? %>
-        <li><%= link_to 'My profile', current_user.profile, class: 'btn btn-secondary' %></li>
-        
+        <li><%= link_to 'My profile', current_user.profile, class: 'nav-link' %></li>
       <% else %>
-        <li><%= link_to 'Create profile', new_profile_path, class: 'btn btn-secondary'  %></li>
+        <li><%= link_to 'Create profile', new_profile_path, class: 'nav-link'  %></li>
       <% end %>
-        </li>
-        <li class="nav-item">
-           <%= link_to "Create Listing", new_listing_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
            <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "nav-link" %>
