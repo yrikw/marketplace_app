@@ -7,6 +7,14 @@ class ListingsController < ApplicationController
   # GET /listings or /listings.json
   def index
     @listings = Listing.all
+
+    search_term = params[:search]
+  
+    if search_term.blank?
+      @listings = Listing.all
+    else
+      @listings = Listing.where("upper(title) LIKE ?", "%#{search_term.upcase}%")
+    end
   end
 
   # GET /listings/1 or /listings/1.json

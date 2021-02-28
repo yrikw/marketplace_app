@@ -1,9 +1,29 @@
 body {
-  background-color: #fff;
+  background-color: #FFFFEE;
   color: #333;
-  margin: 33px; }
+  margin: 33px; 
+  text-align: center;
+  color: #333;
+  margin: 0;
+ }
 
-body, p, ol, ul, td {
+ nav {
+   background-color: #FFFFEE;
+ }
+
+ h2 {
+   color: #228B22;
+ }
+
+.title {
+  font-style: italic;
+}
+
+.btn {
+  text-align: center;
+}
+
+ body, p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px; }
@@ -13,11 +33,6 @@ pre {
   padding: 10px;
   font-size: 11px; }
 
-a {
-  color: #000; }
-
-a:visited {
-  color: #666; }
 
 a:hover {
   color: #fff;

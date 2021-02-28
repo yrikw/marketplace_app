@@ -1,34 +1,37 @@
-<nav class="navbar navbar-expand-md sticky-top">
-  <div class="container-fluid">
-     <%= link_to "Share Your Garden", root_path, class: "navbar-brand" %>
-     <ul class="navbar-nav mr-5-lg>
-        <li class="nav-item">
-          <%= link_to "Shop", listings_path, class: "nav-link" %>
-        </li>
-        <% if user_signed_in? %>
-        <li class="nav-item">
-        <% if current_user.profile.present? %>
-                  <li><%= link_to "Create Listing", new_listing_path, class: "nav-link" %></li>
-        <% end %>
-        </li>
-        <li  class="nav-item">
-        <% if current_user.profile.present? %>
-        <li><%= link_to 'My profile', current_user.profile, class: 'nav-link' %></li>
-      <% else %>
-        <li><%= link_to 'Create profile', new_profile_path, class: 'nav-link'  %></li>
+<nav class="navbar navbar-expand-lg navbar-light p-5 sticky-top">
+<%= link_to "Share Your Garden", root_path, class: "navbar-brand" %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+      <%= link_to "Shop", listings_path, class: "nav-link" %>
+      </li>
+      <% if user_signed_in? %>
+      <li class="nav-item">
+      <% if current_user.profile.present? %>
+                <li><%= link_to "Create Listing", new_listing_path, class: "nav-link" %></li>
       <% end %>
-        </li>
-        <li class="nav-item">
-           <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "nav-link" %>
-        </li>
-        <% else %>
-        <li class="nav-item">
-           <%= link_to "Log in", new_user_session_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-           <%= link_to "Sign Up", new_user_registration_path, class: "nav-link" %>
-        </li>
-        <% end %>
-     </ul>
+      </li>
+      <li  class="nav-item">
+      <% if current_user.profile.present? %>
+      <li><%= link_to 'My Profile', current_user.profile, class: 'nav-link' %></li>
+    <% else %>
+      <li><%= link_to 'Create profile', new_profile_path, class: 'nav-link'  %></li>
+    <% end %>
+      </li>
+      <li class="nav-item">
+         <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+      </li>
+      <% else %>
+      <li class="nav-item">
+         <%= link_to "Log In", new_user_session_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+         <%= link_to "Sign Up", new_user_registration_path, class: "nav-link" %>
+      </li>
+      <% end %>
+   </ul>
   </div>
 </nav>
