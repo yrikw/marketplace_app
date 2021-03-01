@@ -1,18 +1,18 @@
 
 <div class="container">
-  <div class="row">
-    <div class="col">
+  <div class="row mx-auto">
+    <div class="col-6 p-5">
     <% if @profile.picture.attached? %>
     <%= image_tag @profile.picture, class: "rounded-circle profileimg" %>
     <% else %>
     <%= image_tag "noimage.jpg", alt: "noimage", class: "rounded-circle profileimg" %>
     <% end %>
     </div>
-    <div class="col-8 text-left p-5">
+    <div class="col-6 text-left p-5">
     <p>
     <strong>Firstname:</strong>
     <%= @profile.firstname %>
-  </p>
+    </p>
   
   <p>
     <strong>Lastname:</strong>

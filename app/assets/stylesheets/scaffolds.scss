@@ -43,11 +43,13 @@ nav {
 
 .btn {
   text-align: center;
-  background-color: #d9d9f3;
+  background-color: rgba(241,172,157,1);
 }
 
 .btn:hover {
-  background-color:#ceefe4;
+  color: rgba(241,172,157,1);
+  background-color: white;
+  border-color: rgba(241,172,157,1)
 }
 
 h3 {
@@ -70,8 +72,13 @@ p {
   width: 100%;
 }
 
+.mx-auto {
+  width: 60%;
+}
 
-
+.wrap {
+  height : 80vh;
+}
 
 pre {
   background-color: #eee;

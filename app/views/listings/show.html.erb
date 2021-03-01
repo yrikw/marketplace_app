@@ -11,13 +11,16 @@
      <div class="col-lg-4 p-0 mx-2 d-md-block">
        <h3 class="mb-sm-2 mb-md-2"><%= @listing.title %></h3>
        <p class="text-right">Posted by <%= link_to @listing.user.profile.firstname, @listing.user.profile, class: "link" %></p><br>
+       
+       <div class="text-left">
        <h5>$ <%= @listing.price %></h5>
        <h5>Quantity :  <%= @listing.quantity %> <%= @listing.measurement.name %></h5>
        <br>
-       <p class="blockquote mt-2"><b>ITEM INFO</b></p>
+       <p class="blockquote mt-2 text-left"><b>ITEM INFO</b></p>
        <%= @listing.description %>
-       <br>
-       <button class="btn btn-lg btn-block">BUY</button>
+       </div>
+       
+       <button class="btn btn-lg btn-block mt-5">BUY</button>
        <div class="text-right">
          <%= link_to 'Edit', edit_listing_path(@listing), class: "link" if current_user && current_user.id == @listing.user_id %> /
          <%= link_to 'Back', listings_path, class: "link" %> /
