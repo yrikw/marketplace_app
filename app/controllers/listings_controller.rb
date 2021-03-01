@@ -9,12 +9,16 @@ class ListingsController < ApplicationController
     @listings = Listing.all
 
     search_term = params[:search]
+
+    if params[:title].present?
+      @listings = @listings.get_by_title params[:title]
+      end
+      if params[:category].present?
+      @listings = @listings.get_by_category params[:category]
+      end
+   
   
-    if search_term.blank?
-      @listings = Listing.all
-    else
-      @listings = Listing.where("upper(title) LIKE ?", "%#{search_term.upcase}%")
-    end
+    
   end
 
   # GET /listings/1 or /listings/1.json
@@ -84,6 +88,10 @@ class ListingsController < ApplicationController
     def set_form_vars
       @categories = Category.all
       @measurements = Measurement.all
+    end
+
+    def listing_search_params
+      params.fetch(:search, {}).permit(:prefecture_id)
     end
 
     # Only allow a list of trusted parameters through.
