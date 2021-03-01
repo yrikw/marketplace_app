@@ -1,32 +1,77 @@
+
 body {
-  background-color: #FFFFEE;
+  background-color: #f4f0e6;
   color: #333;
   margin: 33px; 
   text-align: center;
   color: #333;
   margin: 0;
+  font-family: 'Open Sans', sans-serif;
  }
 
- nav {
-   background-color: #FFFFEE;
- }
-
- h2 {
-   color: #228B22;
- }
-
-.title {
-  font-style: italic;
+body, p, ol, td {
+  font-size: 15px;
+  line-height: 18px; 
 }
+
+.link {
+  color: #333;
+}
+
+.apptitle:hover {
+  text-decoration: none;
+  color: #333;
+}
+
+nav {
+   background-color: #f4f0e6;
+   font-size: 18px;
+ }
+
+ nav ul li {
+  border-bottom: solid 3px #f4f0e6;
+ }
+
+ footer {
+   background-color: rgba(157,211,168,1);
+   height: 80px;
+ }
+
+ nav ul li:hover {
+  border-bottom: solid 3px #9dd3a8;
+ }
 
 .btn {
   text-align: center;
+  background-color: #d9d9f3;
 }
 
- body, p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px; }
+.btn:hover {
+  background-color:#ceefe4;
+}
+
+h3 {
+  font-family: 'Shadows Into Light', cursive;
+  margin-top: 60px;
+  margin-bottom: 20px;
+}
+
+p {
+  line-height: 25px;
+}
+
+.apptitle {
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 30px;
+  padding-right: 50px;
+}
+
+.profileimg {
+  width: 100%;
+}
+
+
+
 
 pre {
   background-color: #eee;
@@ -35,8 +80,8 @@ pre {
 
 
 a:hover {
-  color: #fff;
-  background-color: #000; }
+  
+ }
 
 th {
   padding-bottom: 5px; }

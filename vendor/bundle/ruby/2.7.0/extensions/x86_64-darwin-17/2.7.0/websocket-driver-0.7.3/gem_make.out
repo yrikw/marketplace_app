@@ -1,0 +1,15 @@
+current directory: /Users/chocolababy/marketplace_app/vendor/bundle/ruby/2.7.0/gems/websocket-driver-0.7.3/ext/websocket-driver
+/Users/chocolababy/.rbenv/versions/2.7.1/bin/ruby -I /Users/chocolababy/.rbenv/versions/2.7.1/lib/ruby/site_ruby/2.7.0 -r ./siteconf20210301-83236-1baqok7.rb extconf.rb
+creating Makefile
+
+current directory: /Users/chocolababy/marketplace_app/vendor/bundle/ruby/2.7.0/gems/websocket-driver-0.7.3/ext/websocket-driver
+make DESTDIR\= clean
+
+current directory: /Users/chocolababy/marketplace_app/vendor/bundle/ruby/2.7.0/gems/websocket-driver-0.7.3/ext/websocket-driver
+make DESTDIR\=
+compiling websocket_mask.c
+linking shared-object websocket_mask.bundle
+
+current directory: /Users/chocolababy/marketplace_app/vendor/bundle/ruby/2.7.0/gems/websocket-driver-0.7.3/ext/websocket-driver
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 websocket_mask.bundle ./.gem.20210301-83236-31720v
