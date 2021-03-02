@@ -1,4 +1,4 @@
 class Profile < ApplicationRecord
   belongs_to :user
-  has_one :picture
+  has_one_attached :picture
 end
