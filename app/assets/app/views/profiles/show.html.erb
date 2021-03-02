@@ -1,0 +1,65 @@
+
+<div class="container">
+  <div class="row mx-auto">
+    <div class="col-6 p-5">
+    <% if @profile.picture.attached? %>
+    <%= image_tag @profile.picture, class: "rounded-circle profileimg" %>
+    <% else %>
+    <%= image_tag "noimage.jpg", alt: "noimage", class: "rounded-circle profileimg" %>
+    <% end %>
+    </div>
+    <div class="col-6 text-left p-5">
+    <p>
+    <strong>Firstname:</strong>
+    <%= @profile.firstname %>
+    </p>
+  
+  <p>
+    <strong>Lastname:</strong>
+    <%= @profile.lastname %>
+  </p>
+  
+  <% if current_user && current_user.id == @profile.user_id %>
+  <p >
+    <strong>Adress:</strong>
+    <%= @profile.adress %>
+  </p>
+  <% end %>
+  
+  <p>
+    <strong>Description:</strong>
+    <%= @profile.description %>
+  </p>
+
+  <%= link_to 'Edit', edit_profile_path(@profile), class: "link" if current_user && current_user.id == @profile.user_id %>
+    </div>
+  </div>
+
+
+<h3><%= @profile.firstname %>'s item lists </h3>
+<div class="container">
+   <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-4">
+     <% @listings.each do |listing| %>
+      <div class="col">
+      <div class="card h-100">
+       <% if listing.picture.attached? %>
+            <%= image_tag listing.picture, class: "thumbnail card-img top" %>
+       <% else %>
+            <%= image_tag "noimage.jpg", alt: "noimage", class: "thumbnail card-img top" %>
+       <% end %>
+         <div class="card-body">
+            <h5><%= listing.title %></h5>
+              <h5>$<%= listing.price %></h5>
+              <%= link_to "See More", listing_path(listing.id), class: "btn"%>
+             <p class="card-subtitle my-2 text-muted text-right"><%= time_ago_in_words(listing.created_at) %> ago</p>
+         </div>
+      </div>
+   </div>
+     <% end %>      
+   </div>
+</div>
+
+<p class="text-right">/ <%= link_to 'Back', listings_path, class: "link" %> / </p>
+    
+  
+

@@ -1,0 +1,51 @@
+<%= form_with(model: listing, local: true) do |form| %>
+  <% if listing.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(listing.errors.count, "error") %> prohibited this listing from being saved:</h2>
+
+      <ul>
+        <% listing.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="mx-auto ">
+  <div class="form-group mb-3 row-cols-1 ">
+    <%= form.label :title %>
+    <%= form.text_field :title, class: "form-control" %>
+  </div>
+
+  <div class="form-group mb-3">
+    <%= form.label :price %>
+    <%= form.number_field :price, class: "form-control" %>
+  </div>
+
+  <div class="form-group mb-3">
+    <%= form.label :category_id %>
+    <%= form.select :category_id, @categories.map {|cat| [cat.name, cat.id]}, class: "form-select" %>
+  </div>
+
+  <div class="form-group mb-3">
+    <%= form.label :description %>
+    <%= form.text_area :description, class: "form-control" %>
+  </div>
+
+  <div class="form-group mb-3">
+    <%= form.label :quantity %>
+    <%= form.number_field :quantity, class: "form-control" %><br>
+    <%= form.select :measurement_id, @measurements.map {|mea| [mea.name, mea.id]}, class: "form-select" %>
+  </div>
+
+  <div class="form-group mb-3">
+    <%= form.label :picture, class: "form-label" %>
+    <%= form.file_field :picture, accept: "image/png, image/jpeg, image/jpg", class: "form-control-file" %>
+    <small class="form-text text-muted">PNG, JPEG and JPG only </small>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+</div>
