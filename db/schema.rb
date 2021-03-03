@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_02_084659) do
+ActiveRecord::Schema.define(version: 2021_03_02_222927) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,6 +57,18 @@ ActiveRecord::Schema.define(version: 2021_03_02_084659) do
     t.index ["user_id"], name: "index_listings_on_user_id"
   end
 
+  create_table "locations", force: :cascade do |t|
+    t.bigint "profile_id"
+    t.integer "unit"
+    t.integer "streetnumber"
+    t.string "streetname"
+    t.string "suburb"
+    t.integer "postcode"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["profile_id"], name: "index_locations_on_profile_id"
+  end
+
   create_table "measurements", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
@@ -68,9 +80,9 @@ ActiveRecord::Schema.define(version: 2021_03_02_084659) do
     t.string "firstname"
     t.string "lastname"
     t.text "description"
-    t.string "address"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "address"
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
@@ -90,5 +102,6 @@ ActiveRecord::Schema.define(version: 2021_03_02_084659) do
   add_foreign_key "listings", "categories"
   add_foreign_key "listings", "measurements"
   add_foreign_key "listings", "users"
+  add_foreign_key "locations", "profiles"
   add_foreign_key "profiles", "users"
 end

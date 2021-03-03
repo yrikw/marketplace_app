@@ -18,17 +18,27 @@
     <%= @profile.lastname %>
   </p>
   
-  <% if current_user && current_user.id == @profile.user_id %>
-  <p >
-    <strong>Adress:</strong>
-    <%= @profile.address %>
+  <p>
+    <strong>Location:</strong>
+    <%= @profile.location.suburb %>
   </p>
-  <% end %>
   
   <p>
     <strong>Description:</strong>
     <%= @profile.description %>
   </p>
+  
+  <% if current_user && current_user.id == @profile.user_id %>
+  <p>
+    <strong>Address:</strong>
+    <%= @profile.location.unit %> / 
+    <%= @profile.location.streetnumber %>
+    <%= @profile.location.streetname %>,
+    <%= @profile.location.suburb %>,
+    <%= @profile.location.postcode %>
+  </p>
+  <% end %>
+
 
   <%= link_to 'Edit', edit_profile_path(@profile), class: "link" if current_user && current_user.id == @profile.user_id %>
     </div>
@@ -48,6 +58,8 @@
        <% end %>
          <div class="card-body">
             <h5><%= listing.title %></h5>
+            <p class="text-right">Posted by <%= link_to listing.user.profile.firstname, listing.user.profile, class: "link" %></p>
+            <p class="text-right"><%= listing.user.profile.address %></p>
               <h5>$<%= listing.price %></h5>
               <%= link_to "See More", listing_path(listing.id), class: "btn"%>
              <p class="card-subtitle my-2 text-muted text-right"><%= time_ago_in_words(listing.created_at) %> ago</p>

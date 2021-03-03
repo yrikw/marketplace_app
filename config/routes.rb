@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :profiles
+  resources :profiles 
   devise_for :users
   root to: 'pages#home'
   resources :listings

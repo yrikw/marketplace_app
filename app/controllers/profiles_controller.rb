@@ -3,7 +3,7 @@ class ProfilesController < ApplicationController
 
   # GET /profiles or /profiles.json
   def index
-    @profiles = Profile.all
+    @profile = Profile.all
   end
 
   # GET /profiles/1 or /profiles/1.json
@@ -14,11 +14,14 @@ class ProfilesController < ApplicationController
 
   # GET /profiles/new
   def new
+   
     if current_user.profile.present?
       redirect_to current_user.profile, notice: 'You can only have one profile.'     
     else
       @profile = Profile.new
+      @profile.build_location 
     end
+      
   end
 
   # GET /profiles/1/edit
@@ -75,6 +78,6 @@ class ProfilesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def profile_params
-      params.require(:profile).permit(:firstname, :lastname, :address, :description, :picture)
+      params.require(:profile).permit(:firstname, :lastname, :address, :description, :picture, location_attributes:[:id, :unit, :streetnumber, :streetname, :suburb, :postcode])
     end
 end

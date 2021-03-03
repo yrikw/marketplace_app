@@ -10,19 +10,20 @@ class ListingsController < ApplicationController
 
     search_term = params[:search]
 
+  # Keyword Search bar 
     if params[:title].present?
       @listings = @listings.get_by_title params[:title]
-      end
-      if params[:category].present?
+    end
+
+  # Category search bar
+    if params[:category].present?
       @listings = @listings.get_by_category params[:category]
-      end
-   
-  
-    
+    end
   end
 
   # GET /listings/1 or /listings/1.json
   def show
+    @listing = Listing.find(params[:id])
   end
 
   # GET /listings/new
@@ -88,10 +89,6 @@ class ListingsController < ApplicationController
     def set_form_vars
       @categories = Category.all
       @measurements = Measurement.all
-    end
-
-    def listing_search_params
-      params.fetch(:search, {}).permit(:prefecture_id)
     end
 
     # Only allow a list of trusted parameters through.
