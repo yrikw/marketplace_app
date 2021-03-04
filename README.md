@@ -1,24 +1,42 @@
-# README
+# T2A2 - Marketplace Project
+## Why is it a problem that needs solving?
+## Link
+- Heroku
+- Github
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Description
+### Purpose 
 
-Things you may want to cover:
+### Function / Features
 
-* Ruby version
+### Sitemap
 
-* System dependencies
+### Screenhosts
 
-* Configuration
+### Target audience
 
-* Database creation
+### Tech stack
 
-* Database initialization
+## User stories
 
-* How to run the test suite
+## Wireframe
+![wireframe](docs/marketplace.png)
 
-* Services (job queues, cache servers, search engines, etc.)
+## ERD
 
-* Deployment instructions
+## 
+##
 
-* ...
+
+
+
+- Tech stack (e.g. html, css, deployment platform, etc)
+R12	User stories for your app
+R13	Wireframes for your app
+R14	An ERD for your app
+R15	Explain the different high-level components (abstractions) in your app
+R16	Detail any third party services that your app will use
+R17	Describe your projects models in terms of the relationships (active record associations) they have with each other
+R18	Discuss the database relations to be implemented in your application
+R19	Provide your database schema design
+R20	Describe the way tasks are allocated and tracked in your project
