@@ -7,7 +7,8 @@
                 <%= image_tag "noimage.jpg", alt: "noimage", class: "thubnail card-img top" %>
            <% end %>
      </div>
-     </div>
+  </div>
+
      <div class="col-lg-4 p-0 mx-2 d-md-block">
        <h3 class="mb-sm-2 mb-md-2"><%= @listing.title %></h3>
        <p class="text-right">Posted by <%= link_to @listing.user.profile.firstname, @listing.user.profile, class: "link" %></p><br>
@@ -20,11 +21,12 @@
        <%= @listing.description %>
        </div>
        
-       <button class="btn btn-lg btn-block mt-5">BUY</button>
+       <button class="btn btn-lg mt-5">BUY</button>
        <div class="text-right">
          <%= link_to 'Edit', edit_listing_path(@listing), class: "link" if current_user && current_user.id == @listing.user_id %> /
-         <%= link_to 'Back', listings_path, class: "link" %> /
-         <%=link_to "Delete", @listing, method: :delete, data: {confirm: "Are you sure?"} , class: "mr-3 link" if current_user && current_user.id == @listing.user_id%>
-</div> 
+         <%= link_to 'Back', listings_path, class: "link" %> |
+         <%=link_to "Delete", @listing, method: :delete, data: {confirm: "Are you sure?"} , class: "mr-3 link" if current_user && current_user.id == @listing.user_id %>
+                  
       </div> 
+   </div>
 </div>

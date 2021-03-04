@@ -1,11 +1,11 @@
+* {
+  margin: 0;
+  padding: 0;
+}
 
 body {
-  background-color: #f4f0e6;
   color: #333;
-  margin: 33px; 
   text-align: center;
-  color: #333;
-  margin: 0;
   font-family: 'Open Sans', sans-serif;
  }
 
@@ -13,6 +13,7 @@ body, p, ol, td {
   font-size: 15px;
   line-height: 18px; 
 }
+
 
 .link {
   color: #333;
@@ -24,21 +25,22 @@ body, p, ol, td {
 }
 
 nav {
-   background-color: #f4f0e6;
+   background-color: white;
    font-size: 18px;
  }
 
  nav ul li {
-  border-bottom: solid 3px #f4f0e6;
+  border-bottom :3px solid white;
+ }
+
+ footer {
+   padding-top: 40px;
+   background-color: #9fb083;
  }
 
  nav ul li:hover {
-  border-bottom: solid 3px #9dd3a8;
+   border-bottom :3px solid  #a47c64;
  }
-
-footer {
-  background-color: #f4f0e6;
-}
 
 h3 {
   font-family: 'Shadows Into Light', cursive;
@@ -48,6 +50,22 @@ h3 {
 
 p {
   line-height: 25px;
+}
+
+.btn {
+  font-weight: bold;
+  display: inline-block;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color:  #a47c64;
+  border: solid 2px #a47c64;
+  border-radius: 3px;
+  transition: .4s;
+}
+
+.btn:hover {
+  background: #a47c64;
+  color: white;
 }
 
 .apptitle {
@@ -66,9 +84,24 @@ p {
   width: 60%;
 }
 
-.wrap {
-  height : 80vh;
+.icon {
+  color: #333;
+  width: 30px;
 }
+
+a {
+  color: #a47c64;
+}
+
+a:hover {
+   color : #a47c64;
+   text-decoration: none;
+}
+
+.line {
+    border-bottom: 3px solid #a47c64;
+    font-size: 20px;
+} 
 
 pre {
   background-color: #eee;
