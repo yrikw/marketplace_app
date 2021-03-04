@@ -14,18 +14,18 @@
 <div class="mx-auto text-left">
   <div class="form-group mb-3 row-cols-1 ">
     <%= form.label :title %>
-    <%= form.text_field :title, class: "form-control col-5" %>
+    <%= form.text_field :title, class: "form-control" %>
   </div>
 
   <div class="form-group mb-3">
     <%= form.label :price %>
-    <%= form.number_field :price, class: "form-control col-3" %>
+    <%= form.number_field :price, class: "form-control" %>
   </div>
 
   <div class="form-group mb-3">
     <%= form.label :category_id %><br>
-    <%= form.select :category_id, @categories.map {|cat| [cat.name, cat.id]}, class: "form-select" %>
-  </div>
+    <%= form.collection_select :category_id, Category.all, :id, :name %>
+    </div>
 
   <div class="form-group mb-3">
     <%= form.label :description %>
@@ -34,8 +34,8 @@
 
   <div class="form-group mb-3">
     <%= form.label :quantity %>
-    <%= form.number_field :quantity, class: "form-control col-3" %><br>
-    <%= form.select :measurement_id, @measurements.map {|mea| [mea.name, mea.id]}, class: "form-select" %>
+    <%= form.number_field :quantity, class: "form-control" %><br>
+    <%= form.collection_select :measurement_id, Measurement.all, :id, :name %>
   </div>
 
   <div class="form-group mb-3">

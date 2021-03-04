@@ -10,7 +10,7 @@
     <%= text_field_tag :title, params[:title], class:"mr-3" %>
 
 <!-- Location search -->
-    <%= label_tag :location, "Location" %>
+    <%= label_tag :location, "Suburb" %>
     <%= text_field_tag :location, params[:location], class:"mr-3" %>
   
 <!-- Category search -->    
@@ -30,11 +30,12 @@
            <% else %>
                 <%= image_tag "noimage.jpg", alt: "noimage", class: "thumbnail card-img top" %>
            <% end %>
-             <div class="card-body">
+
+            <div class="card-body">
                 <h5><%= listing.title %></h5>
                   <h5>$<%= listing.price %></h5>
                   <p class="text-right">Posted by <%= link_to listing.user.profile.firstname, listing.user.profile, class: "link" %></p>
-                  <p class="text-right"><%= listing.user.profile.location.suburb %></p>
+                  <p class="text-right"><i class="fas fa-map-marker-alt"></i>  <%= listing.user.profile.location.suburb %></p>
                   <%= link_to "See More", listing_path(listing.id), class: "btn"%>
                  <p class="card-subtitle my-2 text-muted text-right"><%= time_ago_in_words(listing.created_at) %> ago</p>
              </div>

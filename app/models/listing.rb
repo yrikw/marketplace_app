@@ -4,6 +4,12 @@ class Listing < ApplicationRecord
   belongs_to :user
   has_one_attached :picture
 
+  validates :title, length: {maximum: 20}, presence: true
+  validates :price, presence: true, numericality: { greater_than: 0 }
+  validates :category, presence: true
+  validates :quantity, presence: true, numericality: { greater_than: 0 }
+  
+
 # Search bar title
 scope :get_by_title, ->(title) {
   where("upper(title) LIKE ?", "%#{title.upcase}%")

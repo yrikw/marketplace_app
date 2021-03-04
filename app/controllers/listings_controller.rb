@@ -18,11 +18,10 @@ class ListingsController < ApplicationController
       @listings = @listings.get_by_category params[:category]
     end
 
-    # Keyword search 
+    # Location search 
     if params[:location].present?
       @listings = @listings.find_by_location params[:location]
     end
-    
   end
 
   # GET /listings/1 or /listings/1.json
