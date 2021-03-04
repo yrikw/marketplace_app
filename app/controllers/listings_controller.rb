@@ -8,14 +8,12 @@ class ListingsController < ApplicationController
   def index
     @listings = Listing.all
 
-    search_term = params[:search]
-
-  # Keyword Search bar 
+    # Keyword search 
     if params[:title].present?
       @listings = @listings.get_by_title params[:title]
     end
 
-  # Category search bar
+     # Category search
     if params[:category].present?
       @listings = @listings.get_by_category params[:category]
     end
@@ -89,6 +87,7 @@ class ListingsController < ApplicationController
     def set_form_vars
       @categories = Category.all
       @measurements = Measurement.all
+      @locations = Location.all
     end
 
     # Only allow a list of trusted parameters through.

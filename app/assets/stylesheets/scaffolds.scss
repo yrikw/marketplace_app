@@ -32,24 +32,12 @@ nav {
   border-bottom: solid 3px #f4f0e6;
  }
 
- footer {
-   background-color: rgba(157,211,168,1);
-   height: 80px;
- }
-
  nav ul li:hover {
   border-bottom: solid 3px #9dd3a8;
  }
 
-.btn {
-  text-align: center;
-  background-color: rgba(241,172,157,1);
-}
-
-.btn:hover {
-  color: rgba(241,172,157,1);
-  background-color: white;
-  border-color: rgba(241,172,157,1)
+footer {
+  background-color: #f4f0e6;
 }
 
 h3 {
@@ -69,7 +57,9 @@ p {
 }
 
 .profileimg {
-  width: 100%;
+    border-radius: 50%; 
+    width: 300px; 
+    height: 300px;
 }
 
 .mx-auto {
@@ -85,10 +75,6 @@ pre {
   padding: 10px;
   font-size: 11px; }
 
-
-a:hover {
-  
- }
 
 th {
   padding-bottom: 5px; }

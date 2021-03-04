@@ -1,12 +1,15 @@
 <div class="container">
   <div class="row mx-auto">
     <div class="col-6 p-5">
+    <div class="image-box">
     <% if @profile.picture.attached? %>
-    <%= image_tag @profile.picture, class: "rounded-circle profileimg" %>
+    <%= image_tag @profile.picture, class: "profileimg" %>
     <% else %>
-    <%= image_tag "noimage.jpg", alt: "noimage", class: "rounded-circle profileimg" %>
+    <%= image_tag "noimage.jpg", alt: "noimage", class: "profileimg" %>
     <% end %>
     </div>
+    </div>
+
     <div class="col-6 text-left p-5">
     <p>
     <strong>Firstname:</strong>
@@ -30,7 +33,7 @@
   
   <% if current_user && current_user.id == @profile.user_id %>
   <p>
-    <strong>Address:</strong>
+   <p>Private</p> <strong>Address:</strong>
     <%= @profile.location.unit %> / 
     <%= @profile.location.streetnumber %>
     <%= @profile.location.streetname %>,
@@ -59,7 +62,6 @@
          <div class="card-body">
             <h5><%= listing.title %></h5>
             <p class="text-right">Posted by <%= link_to listing.user.profile.firstname, listing.user.profile, class: "link" %></p>
-            <p class="text-right"><%= listing.user.profile.address %></p>
               <h5>$<%= listing.price %></h5>
               <%= link_to "See More", listing_path(listing.id), class: "btn"%>
              <p class="card-subtitle my-2 text-muted text-right"><%= time_ago_in_words(listing.created_at) %> ago</p>

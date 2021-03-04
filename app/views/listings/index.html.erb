@@ -1,8 +1,14 @@
 <h3 class="hero-title text-center">Shop</h3>
-  <div class="search mt-4 mb-4">
+ 
+
+ <div class="search mt-4 mb-4">
+
+<!-- Title search -->
     <%= form_tag(listings_path, method: "get") do %>
-    <%= label_tag :title, "Keyword" %>
+    <%= label_tag :title, "Title" %>
     <%= text_field_tag :title, params[:title], class:"mr-3" %>
+  
+<!-- Category search -->    
     <%= label_tag :name, "Category" %>
     <%= select_tag :category, options_for_select(Category.all.map{|o| [o.name, o.id]}), include_blank: true, class:"mr-3" %>
     <%= submit_tag "Search", class:"submit"%>
@@ -23,7 +29,7 @@
                 <h5><%= listing.title %></h5>
                   <h5>$<%= listing.price %></h5>
                   <p class="text-right">Posted by <%= link_to listing.user.profile.firstname, listing.user.profile, class: "link" %></p>
-                  <p class="text-right"><%= listing.user.profile.address %></p>
+                  <p class="text-right"><%= listing.user.profile.location.suburb %></p>
                   <%= link_to "See More", listing_path(listing.id), class: "btn"%>
                  <p class="card-subtitle my-2 text-muted text-right"><%= time_ago_in_words(listing.created_at) %> ago</p>
              </div>

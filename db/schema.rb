@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(version: 2021_03_02_222927) do
   end
 
   create_table "locations", force: :cascade do |t|
-    t.bigint "profile_id"
+    t.bigint "profile_id", null: false
     t.integer "unit"
     t.integer "streetnumber"
     t.string "streetname"
