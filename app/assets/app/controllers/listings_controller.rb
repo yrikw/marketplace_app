@@ -10,13 +10,20 @@ class ListingsController < ApplicationController
 
     search_term = params[:search]
 
+    # Search by keyword
     if params[:title].present?
       @listings = @listings.get_by_title params[:title]
-      end
-      if params[:category].present?
+    end
+    
+    # Search by category
+    if params[:category].present?
       @listings = @listings.get_by_category params[:category]
-      end
-   
+    end
+
+    # Search by location
+    if params[:location].present?
+      @listings = @listings.find_by_location params[:location]
+    end
   
     
   end

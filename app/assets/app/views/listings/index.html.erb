@@ -1,8 +1,10 @@
 <h3 class="hero-title text-center">Shop</h3>
   <div class="search mt-4 mb-4">
     <%= form_tag(listings_path, method: "get") do %>
-    <%= label_tag :title, "Keyword" %>
+    <%= label_tag : %>
     <%= text_field_tag :title, params[:title], class:"mr-3" %>
+    <%= label_tag :location, "Keyword" %>
+    <%= text_field_tag :location, params[:location], class:"mr-3" %>
     <%= label_tag :name, "Category" %>
     <%= select_tag :category, options_for_select(Category.all.map{|o| [o.name, o.id]}), include_blank: true, class:"mr-3" %>
     <%= submit_tag "Search", class:"submit"%>
