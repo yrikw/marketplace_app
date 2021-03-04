@@ -3,10 +3,15 @@
 
  <div class="search mt-4 mb-4">
 
-<!-- Title search -->
     <%= form_tag(listings_path, method: "get") do %>
+
+<!-- Title search -->
     <%= label_tag :title, "Title" %>
     <%= text_field_tag :title, params[:title], class:"mr-3" %>
+
+<!-- Location search -->
+    <%= label_tag :location, "Location" %>
+    <%= text_field_tag :location, params[:location], class:"mr-3" %>
   
 <!-- Category search -->    
     <%= label_tag :name, "Category" %>
