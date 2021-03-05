@@ -5,7 +5,6 @@ class PaymentsController < ApplicationController
       pp params[:data][:object][:charges]
       payment = Stripe::PaymentIntent.retrieve(payment_intent_id)
       pp payment.charges
-
       listing_id = payment.metadata.listing_id
       buyer_id = payment.metadata.user_id
 
@@ -14,6 +13,6 @@ class PaymentsController < ApplicationController
       listing = Listing.find(listing_id)
       listing.purchased = true
       listing.save
-      Order.create(user_id: buyer_id, listing_id: listing_id, payment_intent_id: payment_intent_id)
+      Order.create(user_id: buyer_id, listing_id: listing_id, payment_intent_id: payment_intent_id, receipt_url: payment.charges.data[0].receipt_url)
     end
 end

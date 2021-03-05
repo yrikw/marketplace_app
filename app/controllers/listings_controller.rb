@@ -43,7 +43,7 @@ class ListingsController < ApplicationController
           user_id: current_user ? current_user.id : nil
         }
       },
-      success_url: "#{root_url}",
+      success_url: "#{root_url}payments/success?listingId=#{@listing.id}",
       cancel_url: "#{root_url}listings"
     )
     @session_id = stripe_session.id
