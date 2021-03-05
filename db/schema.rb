@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_02_222927) do
+ActiveRecord::Schema.define(version: 2021_03_05_050235) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 2021_03_02_222927) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id", null: false
+    t.boolean "purchased", default: false
     t.index ["category_id"], name: "index_listings_on_category_id"
     t.index ["measurement_id"], name: "index_listings_on_measurement_id"
     t.index ["user_id"], name: "index_listings_on_user_id"
@@ -73,6 +74,17 @@ ActiveRecord::Schema.define(version: 2021_03_02_222927) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "listing_id", null: false
+    t.string "payment_intent_id"
+    t.string "receipt_url"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["listing_id"], name: "index_orders_on_listing_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "profiles", force: :cascade do |t|
@@ -103,5 +115,7 @@ ActiveRecord::Schema.define(version: 2021_03_02_222927) do
   add_foreign_key "listings", "measurements"
   add_foreign_key "listings", "users"
   add_foreign_key "locations", "profiles"
+  add_foreign_key "orders", "listings"
+  add_foreign_key "orders", "users"
   add_foreign_key "profiles", "users"
 end
