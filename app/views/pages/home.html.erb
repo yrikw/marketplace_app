@@ -1,39 +1,41 @@
+  <!-- Top image -->
+  <%= image_tag "top.jpg", alt: "top", class: "img-fluid top-image" %>
 
-<%= image_tag "top.jpg", alt: "top", class: "img-fluid top-image" %>
-<h3>New Items</h3>
- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></p>
- <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-4 mt-5 mb-3">
-     <% @results.each do |listing| %>
-        <div class="col mb-4">
-        <div class="card h-100">
-         <% if listing.picture.attached? %>
-              <%= image_tag listing.picture, class: "thumbnail card-img top" %>
-         <% else %>
-              <%= image_tag "noimage.jpg", alt: "noimage", class: "thumbnail card-img top" %>
-         <% end %>
-           <div class="card-body">
-              <h5><%= listing.title %></h5>
-              <p class="text-right"><i class="fas fa-map-marker-alt"></i>  <%= listing.user.profile.location.suburb %></p>
-                <h5>$<%= listing.price %></h5>
-                <%= link_to "See More", listing_path(listing.id), class: "btn"%>
-               <p class="card-subtitle my-2 text-muted text-right"><%= time_ago_in_words(listing.created_at) %> ago</p>
-           </div>
+  <!-- New Item List -->
+  <h3>New Items</h3>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></p>
+  
+  <div class="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 mt-5 mb-3">  
+    <% @results.each do |listing| %>
+      <div class="card h-100 mb-4">
+        <% if listing.picture.attached? %>
+          <%= image_tag listing.picture, class: "thumbnail card-img top" %>
+        <% else %>
+          <%= image_tag "noimage.jpg", alt: "noimage", class: "thumbnail card-img top" %>
+        <% end %>
+
+        <div class="card-body">
+          <h5><%= listing.title %></h5>
+          <h5>$<%= listing.price %></h5>
+          <p class="text-right"><i class="fas fa-map-marker-alt"></i>  <%= listing.user.profile.location.suburb %></p>
+          <%= link_to "See More", listing_path(listing.id), class: "btn"%>
+          <p class="card-subtitle my-2 text-muted text-right"><%= time_ago_in_words(listing.created_at) %> ago</p>
         </div>
-     </div>
+      </div>
     <% end %> 
-   </div>
+  </div>
 
-   <%= link_to "Find More", listings_path, class: "text-center line mb-5" %>
+  <%= link_to "Find More", listings_path, class: "text-center line mb-5" %>
 
- <div class="container mt-5 mb-5">
-  <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-2">
-    <div class="col">
-    <h4>Pick up or Delivery</h4>
+
+  <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-2 mt-5">
+    <div class="col mb-3">
+      <h4>Pick up or Delivery</h4>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-   </div> 
-    <div class="col">
-    <h4>Health & Safety Rules</h4>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-     </div>
-   </div>
-</div>
+    </div> 
+
+    <div class="col mb-3">
+      <h4>Health & Safety Rules</h4>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+ </div>

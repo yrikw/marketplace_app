@@ -1,8 +1,7 @@
 <%= form_with model: @profile, local: true do |form| %>
   <% if profile.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
-
+      <h2><%= pluralize(profile.errors.count, "error") %> prohibited this profile from being saved: </h2>
       <ul>
         <% profile.errors.full_messages.each do |message| %>
           <li><%= message %></li>
@@ -12,53 +11,53 @@
   <% end %>
   
 
-  <div class="mx-auto text-left">
-  <div class="form-group mb-3">
-    <%= form.label :firstname %>
-    <%= form.text_field :firstname, class: "form-control" %>
-  </div>
-
-  <div class="form-group mb-3">
-    <%= form.label :lastname %>
-    <%= form.text_field :lastname, class: "form-control" %>
-  </div>
-
-  <div class="form-group mb-3">
-    <%= form.label :description %>
-    <%= form.text_area :description, class: "form-control" %>
-  </div>
-
-  <div class="form-group mb-3">
-    <%= form.label :picture, class: "form-label" %>
-    <%= form.file_field :picture, accept: "image/png, image/jpeg, image/jpg", class: "form-control-file" %>
-    <small class="form-text text-muted">PNG, JPEG and JPG only </small>
-  </div>
-
-  <p>Address detail is private. Only suburb is visible.</p>
-
-  <%= form.fields_for :location, @profile.location || Location.new do |p| %> 
+  <div class="mx-auto col-8">
     <div class="form-group mb-3">
-      <%= p.label :unit %><%= p.number_field :unit, class: "form-control" %>  
+      <%= form.label :firstname %>
+      <%= form.text_field :firstname, class: "form-control" %>
     </div>
+
+    <div class="form-group mb-3">
+      <%= form.label :lastname %>
+      <%= form.text_field :lastname, class: "form-control" %>
+    </div>
+
+    <div class="form-group mb-3">
+      <%= form.label :description %>
+      <%= form.text_area :description, class: "form-control" %>
+    </div>
+
+   <div class="form-group mb-3">
+      <%= form.label :picture, class: "form-label" %>
+      <%= form.file_field :picture, accept: "image/png, image/jpeg, image/jpg", class: "form-control-file" %>
+      <small class="form-text text-muted">PNG, JPEG and JPG only </small>
+    </div>
+
+   <p>Address detail is private. Only suburb is visible.</p>
+
+   <%= form.fields_for :location, @profile.location || Location.new do |p| %> 
+     <div class="form-group mb-3">
+       <%= p.label :unit %><%= p.number_field :unit, class: "form-control" %>  
+     </div>
     
     <div class="form-group mb-3">
-    <%= p.label :streetnumber %>
-    <%= p.number_field :streetnumber, class: "form-control" %>  
+      <%= p.label :streetnumber %>
+      <%= p.number_field :streetnumber, class: "form-control" %>  
     </div>
 
     <div class="form-group mb-3">
-    <%= p.label :streetname %>
-    <%= p.text_field :streetname, class: "form-control" %>  
+      <%= p.label :streetname %>
+      <%= p.text_field :streetname, class: "form-control" %>  
     </div>
 
     <div class="form-group mb-3">
-    <%= p.label :suburb %>
-    <%= p.text_field :suburb, class: "form-control" %>
+      <%= p.label :suburb %>
+      <%= p.text_field :suburb, class: "form-control" %>
     </div>
 
     <div class="form-group mb-3">
-    <%= p.label :postcode %>
-    <%= p.number_field :postcode, class: "form-control" %>  
+      <%= p.label :postcode %>
+      <%= p.number_field :postcode, class: "form-control" %>  
     </div>
   <% end %>
 
@@ -66,6 +65,5 @@
     <%= form.submit %>
   </div>
 <% end %>
-</div>
   
 

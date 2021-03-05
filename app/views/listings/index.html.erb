@@ -1,46 +1,33 @@
 <h3 class="hero-title text-center">Shop</h3>
- 
-
- <div class="search mt-4 mb-4">
-
-    <%= form_tag(listings_path, method: "get") do %>
-
-<!-- Title search -->
-    <%= label_tag :title, "Title" %>
-    <%= text_field_tag :title, params[:title], class:"mr-3" %>
-
-<!-- Location search -->
-    <%= label_tag :location, "Suburb" %>
-    <%= text_field_tag :location, params[:location], class:"mr-3" %>
   
-<!-- Category search -->    
-    <%= label_tag :name, "Category" %>
-    <%= select_tag :category, options_for_select(Category.all.map{|o| [o.name, o.id]}), include_blank: true, class:"mr-3" %>
-    <%= submit_tag "Search", class:"submit"%>
-  <% end %>
-</div>
-
-<div class="container">
-   <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-4">
+  <!-- Search bar -->
+  <div class="search mt-4 mb-4">
+     <%= form_tag(listings_path, method: "get") do %>
+       <%= text_field_tag :title, params[:title], class:"mr-3", placeholder: "Item name" %>
+       <%= text_field_tag :location, params[:location], class:"mr-3", placeholder: "Suburb" %>
+       <%= select_tag :category, options_for_select(Category.all.map{|o| [o.name, o.id]}), include_blank: true, class:"mr-3", placeholder: "Category" %>
+       <%= submit_tag "Search", class:"submit"%>
+      <% end %>
+   </div>
+   
+   <!-- Users Item List -->
+   <div class="row row-cols-2 row-cols-sm-2 row-cols-md-2 row-cols-lg-4 p-3">
      <% @listings.each do |listing| %>
-       <div class="col mb-4">
-          <div class="card h-100">
-           <% if listing.picture.attached? %>
-                <%= image_tag listing.picture, class: "thumbnail card-img top" %>
-           <% else %>
-                <%= image_tag "noimage.jpg", alt: "noimage", class: "thumbnail card-img top" %>
-           <% end %>
+          <div class="card">
+            <% if listing.picture.attached? %>
+              <%= image_tag listing.picture, class: "thumbnail card-img top" %>
+             <% else %>
+              <%= image_tag "noimage.jpg", alt: "noimage", class: "thumbnail card-img top" %>
+             <% end %>
 
             <div class="card-body">
-                <h5><%= listing.title %></h5>
-                  <h5>$<%= listing.price %></h5>
-                  <p class="text-right">Posted by <%= link_to listing.user.profile.firstname, listing.user.profile, class: "link" %></p>
-                  <p class="text-right"><i class="fas fa-map-marker-alt"></i>  <%= listing.user.profile.location.suburb %></p>
-                  <%= link_to "See More", listing_path(listing.id), class: "btn"%>
-                 <p class="card-subtitle my-2 text-muted text-right"><%= time_ago_in_words(listing.created_at) %> ago</p>
+              <h5><%= listing.title %></h5>
+              <h5>$<%= listing.price %></h5>
+              <p class="text-right"><i class="fas fa-map-marker-alt"></i>  <%= listing.user.profile.location.suburb %></p>
+              <%= link_to "See More", listing_path(listing.id), class: "btn"%>
+              <p class="card-subtitle my-2 text-muted text-right"><%= time_ago_in_words(listing.created_at) %> ago</p>
              </div>
           </div>
-       </div>
      <% end %>      
    </div>
 </div>
