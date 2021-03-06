@@ -1,22 +1,32 @@
 # T2A2 - Marketplace Project
 ## Problem
-
 Thesedays people stays at home longer than before because of COVID-19 pandemic. People enjoys coooking at home and have a home kitchen garden. However, there is no platform they can share their home grown vegetables, furits and other food.
 
 ## Why is it a problem that needs solving?
-Globally, the amount of food waste is about 1.3 billion tons. This serious problem is not only for restaurants and shops but also at home. <br>
+- Major Problems for food waste acordding to [Australian government](https://www.environment.gov.au/protection/waste/food-waste#:~:text=Food%20waste%20is%20also%20a%20major%20problem%20in,five%20per%20cent%20of%20Australia%E2%80%99s%20greenhouse%20gas%20emissions.)
+1. Each year there is about 7.3 million tonnes of food waste - this is eaquls to 300 kg per person
+2. Food waste costs the economy about $20 billions each year
+3. Food waste accounts for more than five per cent of Australia’s greenhouse gas emissions
+<br>
+Globally, the amount of food waste is about 1.3 billion tons and One third of the world's food is wasted. This serious problem is not only for restaurants and shops but also at home. <br>
 People sometimes throw food away even if the food is not expired or uneatble. There is no platform they can share their homemade food or homegrown vegetables and fruits. <br> 
 The goal of this project is to reduce food waste at home. It will also helps people making a connection in a local community.
 
-## Link
+## Links
 - Heroku
 - Github
 
 ## Description
 ### Purpose 
-To provide a platform where people can share their homemade food and homegrown vegetables and fruits.
+The purpose of this app is to provide a platform where people can share their homemade food and homegrown vegetables and fruits. It allows to buy cheap and fresh vegetables from local area and make local connections.
 
 ### Function / Features
+- User can have more than one items 
+- A search form that user can search items by item title, category or/and suburb in listing page
+- A top page displays new item list
+- Only user who has profile can share or buy items
+- View a seller's profile, picture and item list
+- User can see a item brief overview in a listing page and then click "See more" to see more details and buy the item. The details include title, price, place and description.
 
 ### Sitemap
 
@@ -24,8 +34,10 @@ To provide a platform where people can share their homemade food and homegrown v
 
 ### Target audience
 - People who has a kitchen garden
-- People who owns small food bussiness
-- People who wants to buy fresh vegetables and fruits from local 
+- People who likes cooking
+- People who started a small food bussiness
+- People who want to buy fresh vegetables and fruits from local area
+- People who want to build a connection in their local community especially if they now work from home due to COIVD-19.
 
 ### Tech stack
 - HTML
@@ -35,8 +47,12 @@ To provide a platform where people can share their homemade food and homegrown v
 - Stripe (Payment system)
 - Devise (User authentication)
 - Heroku (Deployment)
+- PostgresQL (Relational database)
+- Github
+- Javascript (UI/UX design)
 
 ## User stories
+
 
 ## Wireframe
 ![wireframe](docs/marketplace.png)
