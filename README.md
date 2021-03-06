@@ -88,15 +88,11 @@ To make an item list, user needs to choose category and measurement. Category an
   has_one_attached :picture
   has_one :order, dependent: :destroy
  ```
- 
- - Category
  ```
  class Category < ApplicationRecord
     has_many :listings
 end
 ```
- 
- - Measurement
  ```
  class Measurement < ApplicationRecord
     has_many :listings
@@ -112,8 +108,6 @@ class User < ApplicationRecord
   has_many :listings
 end
 ```
-
-- Profile 
 ``` class Profile < ApplicationRecord
   belongs_to :user
   has_one_attached :picture
@@ -121,8 +115,6 @@ end
   accepts_nested_attributes_for :location
 end
 ```
-
-- location
 ``` 
 class Address < ApplicationRecord
   belongs_to :suburb
@@ -130,7 +122,7 @@ class Address < ApplicationRecord
 end
 ```
 
-## Order
+### Order
 Order belongs to user and listing, so it can relate user_id and listing_id.
 
 - Order
@@ -141,25 +133,15 @@ class Order < ApplicationRecord
 end
 ```
 
-
- 
-
 ## Discuss the database relations to be implemented in your application
 ## Provide your database schema design
 ## Describe the way tasks are allocated and tracked in your project
 
 
-R7	Identification of the problem you are trying to solve by building this particular marketplace app.
-R8	Why is it a problem that needs solving?
-R9	A link (URL) to your deployed app (i.e. website)
-R10	A link to your GitHub repository (repo).
-R11	Description of your marketplace app (website), including:
-- Purpose
-- Functionality / features
-- Sitemap
-- Screenshots
-- Target audience
-- Tech stack (e.g. html, css, deployment platform, etc)
+
+
+
+
 R12	User stories for your app
 R13	Wireframes for your app
 R14	An ERD for your app
