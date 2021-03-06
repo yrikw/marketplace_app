@@ -74,7 +74,76 @@ The purpose of this app is to provide a platform where people can share their ho
 ## Explain the different high-level components (abstractions) in your app
 
 ## Detail any third party services that your app will use
+
 ## Describe your projects models in terms of the relationships (active record associations) they have with each other
+
+### Listing 
+Listing has  relations with category, measurement, order and user.
+To make an item list, user needs to choose category and measurement. Category and measurement can have many items for each colums.
+- Listing
+``` class Listing < ApplicationRecord
+  belongs_to :category
+  belongs_to :measurement
+  belongs_to :user
+  has_one_attached :picture
+  has_one :order, dependent: :destroy
+ ```
+ 
+ - Category
+ ```
+ class Category < ApplicationRecord
+    has_many :listings
+end
+```
+ 
+ - Measurement
+ ```
+ class Measurement < ApplicationRecord
+    has_many :listings
+end
+```
+### User
+User can have only one profile in this applicationn and they can have many listings.
+Profile belongs to user and can have one address. 
+ - User
+``` 
+class User < ApplicationRecord
+  has_one :profile
+  has_many :listings
+end
+```
+
+- Profile 
+``` class Profile < ApplicationRecord
+  belongs_to :user
+  has_one_attached :picture
+  has_one :location
+  accepts_nested_attributes_for :location
+end
+```
+
+- location
+``` 
+class Address < ApplicationRecord
+  belongs_to :suburb
+  belongs_to :profile
+end
+```
+
+## Order
+Order belongs to user and listing, so it can relate user_id and listing_id.
+
+- Order
+```
+class Order < ApplicationRecord
+  belongs_to :user
+  belongs_to :listing
+end
+```
+
+
+ 
+
 ## Discuss the database relations to be implemented in your application
 ## Provide your database schema design
 ## Describe the way tasks are allocated and tracked in your project
