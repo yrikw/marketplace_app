@@ -106,9 +106,11 @@ class Listing < ApplicationRecord
   belongs_to :user
   has_one_attached :picture
   has_one :order, dependent: :destroy
+end
  ```
  - Category
-``` class Category < ApplicationRecord
+``` 
+class Category < ApplicationRecord
     has_many :listings
 end
 ```
