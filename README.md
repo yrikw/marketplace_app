@@ -78,9 +78,8 @@ The purpose of this app is to provide a platform where people can share their ho
 ## Describe your projects models in terms of the relationships (active record associations) they have with each other
 
 ### Listing 
-Listing has  relations with category, measurement, order and user.
-To make an item list, user needs to choose category and measurement. Category and measurement can have many items for each colums.
-- Listing
+Listing has relations with category, measurement, order and user.
+To make an item list, user needs to choose one category and one measurement, so listing can not be created without them. "has_many" is used for category and measurement because they can have many items for each colums. If a user deletes a listing item, the related data has to be also deleted from category and measurement tables. 
 ``` class Listing < ApplicationRecord
   belongs_to :category
   belongs_to :measurement
@@ -99,9 +98,8 @@ end
 end
 ```
 ### User
-User can have only one profile in this applicationn and they can have many listings.
-Profile belongs to user and can have one address. 
- - User
+User can have only one profile in this applicationn and they can create many listing items. The profile has to have a user and locaton has to have a profile. "has_one" is used for profile and location, so user can have only one profile and one location. 
+
 ``` 
 class User < ApplicationRecord
   has_one :profile
@@ -116,16 +114,14 @@ end
 end
 ```
 ``` 
-class Address < ApplicationRecord
-  belongs_to :suburb
+class Location < ApplicationRecord
   belongs_to :profile
 end
 ```
 
 ### Order
-Order belongs to user and listing, so it can relate user_id and listing_id.
+Order "belongs to" user and listing, so the data which is stored in order table can relate user_id and listing_id, so administrator (or someone who has right to access) can see who purchased which items. 
 
-- Order
 ```
 class Order < ApplicationRecord
   belongs_to :user
