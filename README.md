@@ -9,8 +9,8 @@ There are Problems for food waste according to [Australian government](https://w
 3. Food waste accounts for more than five per cent of Australia’s greenhouse gas emissions
 <br>
 As I discussed there is no platform for seller to sell home grown vegetables, so people sometimes throw food away even if the food is not expired or uneatble. 
-The food waste is an one of the global problem and we need to work on it as a personal and community. 
-The goal of this project is to reduce food waste at home. It will also help accelerate local trade market and it revitalises local economy. 
+The food waste is one of the global problem and we need to work on it as a personal and community. 
+The goal of this project is to reduce food waste at home.  It will also help accelerate local trade market and revitalises local economy. 
 
 ## Links
 - Heroku
