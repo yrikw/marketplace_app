@@ -75,42 +75,50 @@ The purpose of this app is to provide a platform where people can share their ho
 ## Describe your projects models in terms of the relationships (active record associations) they have with each other
 In this project, there are listing model, category model, measurement model, user model, order model, profile model and location mode. In those models, there is defined how to make relations between different databases and also the data should be stored. For example, user can have many listing items. Listing item is included category and measurements. When the user wants to delete the item, the data in category and measurement should be deleted too. However if the models don't have relationships each other, we have to write a code for each database so to define the relationship makes  code simpler and easier. For user, user can have one profile and location belongs to the profile. If we use "accepts_nested_attributes_for", it allows to save profile data and location data in the same view. 
 
+- User
 ``` 
 class User < ApplicationRecord
   has_one :profile
   has_many :listings
 end
 ```
-``` class Profile < ApplicationRecord
+- Profile
+``` 
+class Profile < ApplicationRecord
   belongs_to :user
   has_one_attached :picture
   has_one :location
   accepts_nested_attributes_for :location
 end
 ```
+- Location
 ``` 
 class Location < ApplicationRecord
   belongs_to :profile
 end
 ```
+- Listing
 
-``` class Listing < ApplicationRecord
+``` 
+class Listing < ApplicationRecord
   belongs_to :category
   belongs_to :measurement
   belongs_to :user
   has_one_attached :picture
   has_one :order, dependent: :destroy
  ```
- ```
- class Category < ApplicationRecord
+ - Category
+``` class Category < ApplicationRecord
     has_many :listings
 end
 ```
+- Measurement
  ```
- class Measurement < ApplicationRecord
+class Measurement < ApplicationRecord
     has_many :listings
 end
 ```
+- Order
 ```
 class Order < ApplicationRecord
   belongs_to :user
