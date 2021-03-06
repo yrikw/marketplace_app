@@ -1,5 +1,13 @@
 # T2A2 - Marketplace Project
+## Problem
+
+Nowadays people stays at home longer than before because of COVID-19 pandemic. People enjoys coooking at home and have a home kitchen garden. However, there is no platform they can share their home grown vegetables, furits and other food.
+
 ## Why is it a problem that needs solving?
+Globally, the amount of food waste is about 1.3 billion tons. If annual production is about 4 billion tons, about one-third of that amount is discarded. This serious problem is not only for restaurants and shops but also at home. 
+People sometimes throw food away even if the food is not expired or uneatble.
+The goal of this project is to reduce food waste at home. It will also helps people making a connection in a local community.
+
 ## Link
 - Heroku
 - Github
