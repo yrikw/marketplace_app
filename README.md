@@ -1,16 +1,15 @@
 # T2A2 - Marketplace Project
 ## Problem
-Thesedays people stays at home longer than before because of COVID-19 pandemic. People enjoys coooking at home and have a home kitchen garden. However, there is no platform they can share their home grown vegetables, furits and other food.
+Thesedays people stays at home longer than before because of COVID-19 pandemic. People enjoys coooking at home and have a home kitchen garden. There are many platforms for cloth, furnitures and more. However, there is not such a platform they can share/sell their home grown vegetables, furits and other food. Also, for some marketplaces the user doesn't have to have a proper profile, so there are many untrustworthy accounts, so people who wants to sell their vegetables or fruits, they have to go to market or sell to restaurants or delis. Those actions are not easy for most of people.  
 
 ## Why is it a problem that needs solving?
-- Major Problems for food waste acordding to [Australian government](https://www.environment.gov.au/protection/waste/food-waste#:~:text=Food%20waste%20is%20also%20a%20major%20problem%20in,five%20per%20cent%20of%20Australia%E2%80%99s%20greenhouse%20gas%20emissions.)
+There are Problems for food waste acordding to [Australian government]. (https://www.environment.gov.au/protection/waste/food-waste#:~:text=Food%20waste%20is%20also%20a%20major%20problem%20in,five%20per%20cent%20of%20Australia%E2%80%99s%20greenhouse%20gas%20emissions.)
 1. Each year there is about 7.3 million tonnes of food waste - this is eaquls to 300 kg per person
 2. Food waste costs the economy about $20 billions each year
 3. Food waste accounts for more than five per cent of Australia’s greenhouse gas emissions
 <br>
-Globally, the amount of food waste is about 1.3 billion tons and One third of the world's food is wasted. This serious problem is not only for restaurants and shops but also at home. <br>
-People sometimes throw food away even if the food is not expired or uneatble. There is no platform they can share their homemade food or homegrown vegetables and fruits. <br> 
-The goal of this project is to reduce food waste at home. It will also helps people making a connection in a local community.
+As I discussed there is no platform for seller to sell home grown vegetables, so people sometimes throw food away even if the food is not expired or uneatble. <br> 
+The goal of this project is to reduce food waste at home. If they can sell their vegetables, it will also helps accelerating commucation in a local community.
 
 ## Links
 - Heroku
@@ -130,6 +129,8 @@ end
 ```
 
 ## Discuss the database relations to be implemented in your application
+
+
 ## Provide your database schema design
 ## Describe the way tasks are allocated and tracked in your project
 
