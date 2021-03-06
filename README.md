@@ -68,36 +68,12 @@ The purpose of this app is to provide a platform where people can share their ho
 ## Wireframe
 ![wireframe](docs/marketplace.png)
 
-## ERD
-
 ## Explain the different high-level components (abstractions) in your app
 
 ## Detail any third party services that your app will use
 
 ## Describe your projects models in terms of the relationships (active record associations) they have with each other
-
-### Listing 
-Listing has relations with category, measurement, order and user.
-To make an item list, user needs to choose one category and one measurement, so listing can not be created without them. "has_many" is used for category and measurement because they can have many items for each colums. If a user deletes a listing item, the related data has to be also deleted from category and measurement tables. 
-``` class Listing < ApplicationRecord
-  belongs_to :category
-  belongs_to :measurement
-  belongs_to :user
-  has_one_attached :picture
-  has_one :order, dependent: :destroy
- ```
- ```
- class Category < ApplicationRecord
-    has_many :listings
-end
-```
- ```
- class Measurement < ApplicationRecord
-    has_many :listings
-end
-```
-### User
-User can have only one profile in this applicationn and they can create many listing items. The profile has to have a user and locaton has to have a profile. "has_one" is used for profile and location, so user can have only one profile and one location. 
+In this project, there are listing model, category model, measurement model, user model, order model, profile model and location mode. In those models, there is defined how to make relations between different databases and also the data should be stored. For example, user can have many listing items. Listing item is included category and measurements. When the user wants to delete the item, the data in category and measurement should be deleted too. However if the models don't have relationships each other, we have to write a code for each database so to define the relationship makes  code simpler and easier. For user, user can have one profile and location belongs to the profile. If we use "accepts_nested_attributes_for", it allows to save profile data and location data in the same view. 
 
 ``` 
 class User < ApplicationRecord
@@ -118,9 +94,23 @@ class Location < ApplicationRecord
 end
 ```
 
-### Order
-Order "belongs to" user and listing, so the data which is stored in order table can relate user_id and listing_id, so administrator (or someone who has right to access) can see who purchased which items. 
-
+``` class Listing < ApplicationRecord
+  belongs_to :category
+  belongs_to :measurement
+  belongs_to :user
+  has_one_attached :picture
+  has_one :order, dependent: :destroy
+ ```
+ ```
+ class Category < ApplicationRecord
+    has_many :listings
+end
+```
+ ```
+ class Measurement < ApplicationRecord
+    has_many :listings
+end
+```
 ```
 class Order < ApplicationRecord
   belongs_to :user
@@ -128,7 +118,24 @@ class Order < ApplicationRecord
 end
 ```
 
+
+
 ## Discuss the database relations to be implemented in your application
+## ERD
+
+### Listing 
+Listing has relations with category, measurement, order and user.
+To make an item list, user needs to choose one category and one measurement, so listing can not be created without them. "has_many" is used for category and measurement because they can have many items for each colums. If a user deletes a listing item, the related data has to be also deleted from category and measurement tables. 
+
+### User
+User can have only one profile in this applicationn and they can create many listing items. The profile has to have a user and locaton has to have a profile. "has_one" is used for profile and location, so user can have only one profile and one location. 
+
+
+
+### Order
+Order "belongs to" user and listing, so the data which is stored in order table can relate user_id and listing_id, so administrator (or someone who has right to access) can see who purchased which items. 
+
+
 
 
 ## Provide your database schema design
