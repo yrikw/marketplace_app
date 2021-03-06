@@ -16,17 +16,25 @@ The goal of this project is to reduce food waste at home. It will also helps peo
 - Heroku
 - Github
 
-## Description
+## Description of this application
 ### Purpose 
 The purpose of this app is to provide a platform where people can share their homemade food and homegrown vegetables and fruits. It allows to buy cheap and fresh vegetables from local area and make local connections.
 
 ### Function / Features
-- User can have more than one items 
-- A search form that user can search items by item title, category or/and suburb in listing page
-- A top page displays new item list
+#### User 
+- Sign up to use this app
 - Only user who has profile can share or buy items
 - View a seller's profile, picture and item list
+- User can have more than one items 
+
+#### Listing
+- A search form that user can search items by item title, category or/and suburb in listing page
+- A top page displays new item list
 - User can see a item brief overview in a listing page and then click "See more" to see more details and buy the item. The details include title, price, place and description.
+
+#### Payment
+- This application uses Stripe as a third party
+- User can check the receipt after purchase
 
 ### Sitemap
 
@@ -50,6 +58,10 @@ The purpose of this app is to provide a platform where people can share their ho
 - PostgresQL (Relational database)
 - Github
 - Javascript (UI/UX design)
+- Balsamiq
+- Drawio
+- Trello
+- Unsplash (Free pictures)
 
 ## User stories
 
