@@ -8,17 +8,17 @@ class ListingsController < ApplicationController
   def index
     @listings = Listing.all
 
-    # Keyword search 
+    # Title search from listing table
     if params[:title].present?
       @listings = @listings.get_by_title params[:title]
     end
 
-     # Category search
+     # Category search from listing table
     if params[:category].present?
       @listings = @listings.get_by_category params[:category]
     end
 
-    # Location search 
+    # Suburb search from location table
     if params[:location].present?
       @listings = @listings.find_by_location params[:location]
     end
@@ -26,6 +26,7 @@ class ListingsController < ApplicationController
 
   # GET /listings/1 or /listings/1.json
   def show
+  # Payment using Stripe
     stripe_session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
       client_reference_id: current_user ? current_user.id : nil,
@@ -102,6 +103,7 @@ class ListingsController < ApplicationController
       @listing = Listing.find(params[:id])
     end
 
+    # To edit, delete or update listing
     def set_user_listing
       @listing = current_user.listings.find_by_id(params[:id])
       if @listing == nil

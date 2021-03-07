@@ -1,3 +1,4 @@
+<div class="mx-auto col-8">
 <%= form_with(model: listing, local: true) do |form| %>
   <% if listing.errors.any? %>
     <div id="error_explanation">
@@ -11,7 +12,6 @@
     </div>
   <% end %>
 
-<div class="mx-auto col-8">
   <div class="form-group mb-3 row-cols-1 ">
     <%= form.label :title %>
     <%= form.text_field :title, class: "form-control" %>

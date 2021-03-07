@@ -1,6 +1,7 @@
 class PaymentsController < ApplicationController
-    skip_before_action :verify_authenticity_token, only: [:webhook]
-    def webhook
+  # Payment 
+  skip_before_action :verify_authenticity_token, only: [:webhook]
+  def webhook 
       payment_intent_id = params[:data][:object][:payment_intent]
       pp params[:data][:object][:charges]
       payment = Stripe::PaymentIntent.retrieve(payment_intent_id)
@@ -11,8 +12,8 @@ class PaymentsController < ApplicationController
       puts "listing: #{payment.metadata.listing_id}"
       puts "buyer: #{payment.metadata.user_id}"
       listing = Listing.find(listing_id)
-      listing.purchased = true
+      listing.purchased = true 
       listing.save
-      Order.create(user_id: buyer_id, listing_id: listing_id, payment_intent_id: payment_intent_id, receipt_url: payment.charges.data[0].receipt_url)
-    end
+      Order.create(user_id: buyer_id, listing_id: listing_id, payment_intent_id: payment_intent_id)
+  end 
 end

@@ -35,11 +35,6 @@ nav ul li {
   border-bottom: 3px solid white;
 }
 
-footer {
-  padding-top: 40px;
-  background-color: #9fb083;
-}
-
 nav ul li:hover {
   border-bottom: 3px solid #a47c64;
 }
@@ -47,8 +42,10 @@ nav ul li:hover {
 .wrapper {
   min-height: calc(100vh - 290px);
 }
-.footer {
-  height: 300px;
+
+footer {
+  padding-top: 40px;
+  background-color: #9fb083;
 }
 
 h3 {
@@ -133,13 +130,12 @@ div.actions {
 
 .field_with_errors {
   padding: 2px;
-  background-color: red;
-  display: table;
+  background-color: #ff9933;
 }
 
 #error_explanation {
   width: 450px;
-  border: 2px solid red;
+  border: 2px solid #ff9933;
   padding: 7px 7px 0;
   margin-bottom: 20px;
   background-color: #f0f0f0;
@@ -151,7 +147,7 @@ div.actions {
   padding: 5px 5px 5px 15px;
   font-size: 12px;
   margin: -7px -7px 0;
-  background-color: #c00;
+  background-color: #ff9933;
   color: #fff;
 }
 

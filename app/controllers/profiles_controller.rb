@@ -8,18 +8,18 @@ class ProfilesController < ApplicationController
 
   # GET /profiles/1 or /profiles/1.json
   def show
+    # To show users listing
     user = @profile.user
     @listings = Listing.where(user: user)
   end
 
   # GET /profiles/new
   def new
-   
+   # Create a profile and alert
     if current_user.profile.present?
       redirect_to current_user.profile, notice: 'You can only have one profile.'     
     else
       @profile = Profile.new
-      @profile.build_location 
     end
       
   end
@@ -30,10 +30,6 @@ class ProfilesController < ApplicationController
 
   # POST /profiles or /profiles.json
   def create
-    if current_user.profile.present?
-      redirect_to current_user.profile, notice: 'You can only have one profile.'     
-    end
-    
     @profile = Profile.new(profile_params)
     @profile.user = current_user
 

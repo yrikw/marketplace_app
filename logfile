@@ -1,0 +1,2 @@
+2021-03-07 12:56:28.153 AEDT [1776] FATAL:  lock file "postmaster.pid" already exists
+2021-03-07 12:56:28.153 AEDT [1776] HINT:  Is another postmaster (PID 1701) running in data directory "/usr/local/var/postgres"?
