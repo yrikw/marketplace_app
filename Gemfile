@@ -58,3 +58,5 @@ gem "devise", "~> 4.7"
 gem "aws-sdk-s3", require: false
 
 gem "stripe", "~> 5.30"
+
+gem 'activeadmin'

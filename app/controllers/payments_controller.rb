@@ -14,6 +14,6 @@ class PaymentsController < ApplicationController
       listing = Listing.find(listing_id)
       listing.purchased = true 
       listing.save
-      Order.create(user_id: buyer_id, listing_id: listing_id, payment_intent_id: payment_intent_id)
+      Order.create(user_id: buyer_id, listing_id: listing_id, payment_intent_id: payment_intent_id, receipt_url: payment.charges.data[0].receipt_url)
   end 
 end

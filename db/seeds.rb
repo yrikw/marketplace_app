@@ -26,3 +26,4 @@ end
 if User.count == 0
     User.create(email: "test@test.com", password: "111111", password_confirmation: "111111")
 end
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?

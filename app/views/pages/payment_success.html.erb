@@ -1,1 +1,9 @@
+
 <h3>Thank you for purchasing</h3>
+<h4 class="mt-5"><%= @listing.title %></h4>
+   
+ <h6>$ <%= @listing.price %></h6>
+ <h6>Quantity :  <%= @listing.quantity %> <%= @listing.measurement.name %></h6>
+
+ <%=link_to "View Receipt", @purchase.receipt_url , target: :_blank, class:"btn" %>
+   
