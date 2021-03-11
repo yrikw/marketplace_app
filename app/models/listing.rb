@@ -14,8 +14,7 @@ class Listing < ApplicationRecord
 
 # Search bar title
 scope :get_by_title, ->(title) {
-  where("upper(title) LIKE ?", "%#{title.upcase}%")
-  }
+  where("upper(title) LIKE ?", "%#{title.upcase}%")}
 
 # Search bar category
   scope :get_by_category, ->(category) {

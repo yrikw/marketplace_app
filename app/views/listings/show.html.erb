@@ -22,6 +22,8 @@
     <!-- Buy button -->
     <% if current_user && @listing.purchased == false %>
       <button data-stripe="payment" class="btn btn-lg mt-5 btn-block">BUY</button>
+    <% elsif current_user == @listing.user %>
+      <button class= 'btn btn-lg mt-5 btn-block' disabled>YOUR ITEM</button>
     <% elsif current_user && @listing.purchased == true %>
       <button class= 'btn btn-lg mt-5 btn-block' disabled>SOLD</button>
     <% else %>
