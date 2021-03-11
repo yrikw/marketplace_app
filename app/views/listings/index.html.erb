@@ -11,7 +11,7 @@
       <% end %>
    </div>
    
-   <!-- Users Item List -->
+   <!--  Listing -->
    <div class="row row-cols-2 row-cols-sm-2 row-cols-md-2 row-cols-lg-4 p-3">
      <% @listings.each do |listing| %>
       <div class="col mb-3">
@@ -26,7 +26,7 @@
           <h5><%= listing.title %></h5>
           <h5>$<%= listing.price %></h5>
           <p class="text-right"><i class="fas fa-map-marker-alt"></i>  <%= listing.user.profile.location.suburb %></p>
-          <%= link_to "See More", listing_path(listing.id), class: "btn"%>
+          <%= link_to "See More", listing_path(listing.id), class: "btn btn-block"%>
            <p class="card-subtitle my-2 text-muted text-right"><%= time_ago_in_words(listing.created_at) %> ago</p>
         </div>
      </div>

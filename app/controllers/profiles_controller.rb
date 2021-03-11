@@ -11,6 +11,8 @@ class ProfilesController < ApplicationController
     # To show users listing
     user = @profile.user
     @listings = Listing.where(user: user)
+
+    @orders = Order.where(user_id:current_user) 
   end
 
   # GET /profiles/new

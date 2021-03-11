@@ -20,7 +20,7 @@
                 <h5><%= listing.title %></h5>
                 <h5>$<%= listing.price %></h5>
                 <p class="text-right"><i class="fas fa-map-marker-alt"></i>  <%= listing.user.profile.location.suburb %></p>
-                <%= link_to "See More", listing_path(listing.id), class: "btn"%>
+                <%= link_to "See More", listing_path(listing.id), class: "btn btn-block"%>
                  <p class="card-subtitle my-2 text-muted text-right"><%= time_ago_in_words(listing.created_at) %> ago</p>
               </div>
            </div>

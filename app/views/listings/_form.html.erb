@@ -1,4 +1,4 @@
-<div class="mx-auto col-8">
+<div class="container col-8 col-lg-4 col-sm-6 text-left">
 <%= form_with(model: listing, local: true) do |form| %>
   <% if listing.errors.any? %>
     <div id="error_explanation">
@@ -43,9 +43,9 @@
     <%= form.file_field :picture, accept: "image/png, image/jpeg, image/jpg", class: "form-control-file" %>
     <small class="form-text text-muted">PNG, JPEG and JPG only </small>
   </div>
+  </div>
 
   <div class="actions text-center">
     <%= form.submit %>
   </div>
 <% end %>
-</div>

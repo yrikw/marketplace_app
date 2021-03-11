@@ -6,7 +6,7 @@ class ListingsController < ApplicationController
 
   # GET /listings or /listings.json
   def index
-    @listings = Listing.all
+    @listings = Listing.all.order(created_at: :desc) 
 
     # Title search from listing table
     if params[:title].present?
@@ -48,7 +48,6 @@ class ListingsController < ApplicationController
       cancel_url: "#{root_url}listings"
     )
     @session_id = stripe_session.id
-    
   end
 
   # GET /listings/new

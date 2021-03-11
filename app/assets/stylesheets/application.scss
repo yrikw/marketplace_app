@@ -46,15 +46,11 @@ td {
 
 nav {
   background-color: white;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 nav ul li {
-  border-bottom: 3px solid white;
-}
-
-nav ul li:hover {
-  border-bottom: 3px solid #a47c64;
+  padding: 20px;
 }
 
 .wrapper {
@@ -82,8 +78,8 @@ p {
   display: inline-block;
   padding: 0.3em 1em;
   text-decoration: none;
-  color: #a47c64;
-  border: solid 2px #a47c64;
+  color: white;
+  background-color: #a47c64;
   border-radius: 3px;
   transition: 0.4s;
 }
@@ -91,6 +87,7 @@ p {
 .btn:hover {
   background: #a47c64;
   color: white;
+  opacity: 0.5;
 }
 
 .apptitle {

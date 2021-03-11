@@ -5,8 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_one :profile
   has_many :listings
+  has_many :comments, dependent: :destroy    
 
-  def posts
-    return Post.where(user_id: self.id)
-  end
+  validates :comment_text, presence: true, length: { maximum: 1000 } 
 end

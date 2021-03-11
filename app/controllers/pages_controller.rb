@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def home
-  #Show new item list (4 items)
+  #Show 4 new items 
      @listings = Listing.all.order(created_at: :desc) 
      @results = []
      @listings.each_with_index do |item, index|
