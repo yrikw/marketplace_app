@@ -22,19 +22,28 @@ The purpose of this app is to provide a platform where people can share their ho
 
 ### Function / Features
 #### User 
-- Sign up to use this app
-- Only user who has profile can share or buy items
-- View a seller's profile, picture and item list
+- Sign up to use all functions 
+Users can see items withour sign-up but they need to sign-up. 
+- Only user who has profile detail can share items
+To share items, user needs to fill profile details. 
+- Buyer can view a seller's profile, picture and item list
+Buyer can see the seller's detail so they can know what kind of person seller is and if they can trust the items/seller. Buyer can buy items without worry. 
 - User can have more than one items 
+User can share items as many as they want and also choose quantity, so they can sell from small amount.
 
 #### Listing
 - A search form that user can search items by item title, category or/and suburb in listing page
+Buyer can search items in search form, then they can find what they want efficiently and it makes them exploring the application.
 - A top page displays new item list
+User can check all new items on the top page. If they check the application constantly, they just can see top page.
 - User can see a item brief overview in a listing page and then click "See more" to see more details and buy the item. The details include title, price, place and description.
+In the listing page, there is title, price and location, then if user is interested in the item, they can click "See more" to read a detail of the item. Also, even if they use smartphone, the design is two colums so they don't have to scroll one by one. 
 
 #### Payment
 - This application uses Stripe as a third party
-- User can check the receipt after purchase
+Using Stripe makes the purchasing process smoothly and they can use credit card and it is also tracked. 
+- Buyer can check the receipt after purchase
+Buyer can check a details of the purchase and also seller's detail to make sure if it is correct.
 
 ### Sitemap
 
@@ -71,7 +80,17 @@ The purpose of this app is to provide a platform where people can share their ho
 
 ## Explain the different high-level components (abstractions) in your app
 
+
 ## Detail any third party services that your app will use
+- Device
+Device is installed to handle user authentication and user account creation. User can sign-up with their e-mail and password, then they can create a profile detail. In the application, "current_user" is used to share items, purchase items and create a profile. This allows to show the functions only sign-up user can use.
+
+- Amazon S3
+Amazon S3 is one of the object storage service that provides data availability, security and performance. In this application, this is used for image upload. It allows user to upload many images and stored them with a strong security. 
+
+- Stripe
+Stripe allows to handle payment system. User can purchase items and pay thorugh this service with a credit card. Also, they can check receipt after purchase. The payment is also stored as data in the payment table so if there is something problem, the administer can track it. 
+
 
 ## Describe your projects models in terms of the relationships (active record associations) they have with each other
 In this project, there are listing model, category model, measurement model, user model, order model, profile model and location mode. In those models, there is defined how to make relations between different databases and also the data should be stored. For example, user can have many listing items. Listing item is included category and measurements. When the user wants to delete the item, the data in category and measurement should be deleted too. However if the models don't have relationships each other, we have to write a code for each database so to define the relationship makes  code simpler and easier. For user, user can have one profile and location belongs to the profile. If we use "accepts_nested_attributes_for", it allows to save profile data and location data in the same view. 
