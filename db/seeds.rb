@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-categories = ["Vegetable", "Fruits", "Herb", "Seeds", "Homemdade Relish", "Others"]
+categories = ["Vegetables", "Fruits", "Herbs", "Seeds", "Homemdade Relish", "Others"]
 measurements = ["kg", "g", "pcs", "packs"]
 
 if Category.count == 0
