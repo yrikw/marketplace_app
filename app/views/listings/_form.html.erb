@@ -1,5 +1,6 @@
 <div class="container col-8 col-lg-4 col-sm-6 text-left">
 <%= form_with(model: listing, local: true) do |form| %>
+  <table>
   <% if listing.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(listing.errors.count, "error") %> prohibited this listing from being saved:</h2>
@@ -45,7 +46,8 @@
   </div>
   </div>
 
-  <div class="actions text-center">
+  <div class="actions">
     <%= form.submit %>
   </div>
+</table>
 <% end %>

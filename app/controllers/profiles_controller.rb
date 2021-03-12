@@ -11,6 +11,7 @@ class ProfilesController < ApplicationController
     # To show users listing
     user = @profile.user
     @listings = Listing.where(user: user)
+    @listings = Listing.all.order(created_at: :desc) 
 
     @orders = Order.where(user_id:current_user) 
   end
@@ -26,7 +27,7 @@ class ProfilesController < ApplicationController
       
   end
 
-  # GET /profiles/1/edit
+   # GET /profiles/1/edit
   def edit
   end
 

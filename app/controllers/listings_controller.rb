@@ -6,6 +6,7 @@ class ListingsController < ApplicationController
 
   # GET /listings or /listings.json
   def index
+    # Listing is sorted by date from new to old
     @listings = Listing.all.order(created_at: :desc) 
 
     # Title search from listing table
@@ -13,12 +14,12 @@ class ListingsController < ApplicationController
       @listings = @listings.get_by_title params[:title]
     end
 
-     # Category search from listing table
+     # Category search by category
     if params[:category].present?
       @listings = @listings.get_by_category params[:category]
     end
 
-    # Suburb search from location table
+    # Location search by suburb
     if params[:location].present?
       @listings = @listings.find_by_location params[:location]
     end
@@ -32,11 +33,11 @@ class ListingsController < ApplicationController
       client_reference_id: current_user ? current_user.id : nil,
       customer_email: current_user ? current_user.email : nil,
       line_items: [{
-        amount: @listing.price * 100,
-        name: @listing.title,
-        description: @listing.description,
-        currency: 'aud', 
-        quantity:1
+        amount: @listing.price * 100, # price
+        name: @listing.title, # title
+        description: @listing.description, #description
+        currency: 'aud', # currency
+        quantity:1 # quantity 
       }],
       payment_intent_data: {
         metadata: {
@@ -102,7 +103,7 @@ class ListingsController < ApplicationController
       @listing = Listing.find(params[:id])
     end
 
-    # To edit, delete or update listing
+    # To edit, delete or update listing if the user doesn't login the alert comes up
     def set_user_listing
       @listing = current_user.listings.find_by_id(params[:id])
       if @listing == nil
@@ -110,7 +111,8 @@ class ListingsController < ApplicationController
            redirect_to listings_path
       end
     end
-
+    
+    #Get data and use it for before_action
     def set_form_vars
       @categories = Category.all
       @measurements = Measurement.all

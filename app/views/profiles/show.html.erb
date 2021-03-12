@@ -8,11 +8,10 @@
         <% end %>
       </div>
    
-
+    <!-- User profile -->
     <div class="col-lg-6 p-3 mx-2 text-left">
       <h4><strong></strong><%= @profile.firstname %> <%= @profile.lastname %></h4>
       <p><i class="fas fa-map-marker-alt"></i> <%= @profile.location.suburb %></p>
-     
       <%=  @profile.description %>
   
       <% if current_user && current_user.id == @profile.user_id %>
@@ -28,7 +27,7 @@
   </div>
 
     
-
+  <!-- User's item list -->
    <h3><%= @profile.firstname %>'s item lists </h3>
     <div class="container">
       <div class="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
@@ -54,16 +53,18 @@
    </div>
   </div>
 
-  <h3>Your connection </h3>
+  <!-- Purchase history -->
+  <h3>Your purchase history </h3>
+  <p>Seller may delete items</p>
   <div class="container">
    <div class="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 mb-3">
     <% @orders.each do |item| %>
       <div class="col">
             <div class="card h-100">
                <% if item.listing.picture.attached? %>
-                  <%= image_tag item.listing.picture, class: "thumbnail card-img top" %>
+                  <%= image_tag item.listing.picture, class: "thumbnail card-img size" %>
                <% else %>
-                  <%= image_tag "noimage.jpg", alt: "noimage", class: "thumbnail card-img top" %>
+                  <%= image_tag "noimage.jpg", alt: "noimage", class: "thumbnail card-img size" %>
                <% end %>
 
               <div class="card-body">

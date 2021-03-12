@@ -33,7 +33,7 @@
       <small class="form-text text-muted">PNG, JPEG and JPG only </small>
     </div>
 
-   <p>Address detail is private. Only suburb is visible.</p>
+    <p>Address detail is private. Only suburb is visible for other users.</p>
 
    <%= form.fields_for :location, @profile.location || Location.new do |p| %> 
      <div class="form-group mb-3">

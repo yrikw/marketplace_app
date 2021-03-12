@@ -5,7 +5,7 @@
       <% if @listing.picture.attached? %>
          <%= image_tag @listing.picture, class: "thumbnail card-img top" %>
       <% else %>
-         <%= image_tag "noimage.jpg", alt: "noimage", class: "thubnail card-img top" %>
+         <%= image_tag "noimage.jpg", alt: "noimage", class: "thumbnail card-img top" %>
       <% end %>
   </div>
 
@@ -20,10 +20,10 @@
     </div>
        
     <!-- Buy button -->
-    <% if current_user && @listing.purchased == false %>
-      <button data-stripe="payment" class="btn btn-lg mt-5 btn-block">BUY</button>
-    <% elsif current_user == @listing.user %>
+    <% if current_user == @listing.user %>
       <button class= 'btn btn-lg mt-5 btn-block' disabled>YOUR ITEM</button>
+    <% elsif current_user && @listing.purchased == false %>
+      <button data-stripe="payment" class="btn btn-lg mt-5 btn-block">BUY</button>
     <% elsif current_user && @listing.purchased == true %>
       <button class= 'btn btn-lg mt-5 btn-block' disabled>SOLD</button>
     <% else %>

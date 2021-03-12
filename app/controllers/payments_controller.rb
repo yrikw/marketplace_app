@@ -1,5 +1,5 @@
 class PaymentsController < ApplicationController
-  # Payment 
+  #  Run webhook stripe 3000 and able to check the detail
   skip_before_action :verify_authenticity_token, only: [:webhook]
   def webhook 
       payment_intent_id = params[:data][:object][:payment_intent]
@@ -9,7 +9,7 @@ class PaymentsController < ApplicationController
       listing_id = payment.metadata.listing_id
       buyer_id = payment.metadata.user_id
 
-      puts "listing: #{payment.metadata.listing_id}"
+      puts "listing: #{payment.metadata.listing_id}" #
       puts "buyer: #{payment.metadata.user_id}"
       listing = Listing.find(listing_id)
       listing.purchased = true 

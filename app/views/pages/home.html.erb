@@ -11,9 +11,9 @@
       <div class="col mb-3">
             <div class="card h-100">
                <% if listing.picture.attached? %>
-                  <%= image_tag listing.picture, class: "thumbnail card-img top" %>
+                  <%= image_tag listing.picture, class: "thumbnail card-img size" %>
                <% else %>
-                  <%= image_tag "noimage.jpg", alt: "noimage", class: "thumbnail card-img top" %>
+                  <%= image_tag "noimage.jpg", alt: "noimage", class: "thumbnail card-img size" %>
                <% end %>
 
               <div class="card-body">
@@ -31,6 +31,7 @@
   <%= link_to "Find More", listings_path, class: "text-center line mb-5" %>
 
 
+  <!-- application info -->
   <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-2 mt-5">
     <div class="col mb-3">
       <h4>Pick up or Delivery</h4>

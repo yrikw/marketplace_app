@@ -22,4 +22,5 @@ module ListingsHelper
         end 
         return button.html_safe    
     end
+
 end

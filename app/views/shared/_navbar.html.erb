@@ -12,7 +12,7 @@
          <%= link_to "Shop", listings_path, class: "nav-link" %>
       </li>
 
-      <% if user_signed_in? %>
+      <% if user_signed_in? %> <!-- If user sign-in some menus is showed -->
 
       <li  class="nav-item">
       <% if current_user.profile.present? %>
