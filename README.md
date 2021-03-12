@@ -14,7 +14,7 @@ The goal of this project is to reduce food waste at home and provodes an opprtun
 
 ## Links
 - Heroku
-- Github
+- [Github](https://github.com/yrikw/marketplace_app)
 
 ## Description of this application
 ### Purpose 
@@ -22,30 +22,31 @@ The purpose of this app is to provide a platform where people can share their ho
 
 ### Function / Features
 #### User 
-- Sign up to use all functions 
+- Sign up to use all functions<br>
 Users can see items withour sign-up but they need to sign-up. 
-- Only user who has profile detail can share items
+- Only user who has profile detail can share items<br>
 To share items, user needs to fill profile details. 
-- Buyer can view a seller's profile, picture and item list
+- Buyer can view a seller's profile, picture and item list<br>
 Buyer can see the seller's detail so they can know what kind of person seller is and if they can trust the items/seller. Buyer can buy items without worry. 
-- User can have more than one items 
+- User can have more than one items<br>
 User can share items as many as they want and also choose quantity, so they can sell from small amount.
 
 #### Listing
-- A search form that user can search items by item title, category or/and suburb in listing page
+- A search form that user can search items by item title, category or/and suburb in listing page<br>
 Buyer can search items in search form, then they can find what they want efficiently and it makes them exploring the application.
-- A top page displays new item list
+- A top page displays new item list<br>
 User can check all new items on the top page. If they check the application constantly, they just can see top page.
-- User can see a item brief overview in a listing page and then click "See more" to see more details and buy the item. The details include title, price, place and description.
+- User can see a item brief overview in a listing page and then click "See more" to see more details and buy the item. The details include title, price, place and description.<br>
 In the listing page, there is title, price and location, then if user is interested in the item, they can click "See more" to read a detail of the item. Also, even if they use smartphone, the design is two colums so they don't have to scroll one by one. 
 
 #### Payment
-- This application uses Stripe as a third party
+- This application uses Stripe as a third party<br>
 Using Stripe makes the purchasing process smoothly and they can use credit card and it is also tracked. 
-- Buyer can check the receipt after purchase
+- Buyer can check the receipt after purchase<br>
 Buyer can check a details of the purchase and also seller's detail to make sure if it is correct.
 
 ### Sitemap
+![sitemap](docs/sitemap.png)
 
 ### Screenhosts
 
@@ -76,19 +77,19 @@ Buyer can check a details of the purchase and also seller's detail to make sure 
 
 
 ## Wireframe
-![wireframe](docs/marketplace.png)
+![wireframe](docs/Marketplace.png)
 
 ## Explain the different high-level components (abstractions) in your app
 This application is created with Ruby one Rails.　Models, views, and controllers are called MVC architectures。 Models (the part that deals with data), views (the part that produces user-visible results), and controllers (which process user requests and work with models and views). How MVC works in this applicatio is requests from users will be received as URLs. The "routes.rb" file is used to analyze the URL received and determine which controller should perform the action. This file enumerates which action to call on which controller when it is any URL. A model is provided for each table in a database. Actions in user requests interact with the database through the model to retrieve data or store new data. The data retrieved through the model and change it into a variable. The view creates an HTML document using the data passed through the variable. 
 
 ## Detail any third party services that your app will use
-- Device
+- Device<br>
 Device is installed to handle user authentication and user account creation. User can sign-up with their e-mail and password, then they can create a profile detail. In the application, "current_user" is used to share items, purchase items and create a profile. This allows to show the functions only sign-up user can use.
 
-- Amazon S3
+- Amazon S3<br>
 Amazon S3 is one of the object storage service that provides data availability, security and performance. In this application, this is used for image upload. It allows user to upload many images and stored them with a strong security. 
 
-- Stripe
+- Stripe<br>
 Stripe allows to handle payment system. User can purchase items and pay thorugh this service with a credit card. Also, they can check receipt after purchase. The payment is also stored as data in the payment table so if there is something problem, the administer can track it. 
 
 
@@ -152,6 +153,7 @@ end
 
 ## Discuss the database relations to be implemented in your application
 ## ERD
+![ERD](docs/erd.png)
 
 ### Listing 
 Listing has relations with category, measurement, order and user.
@@ -162,8 +164,6 @@ User can have only one profile in this applicationn and they can create many lis
 
 ### Order
 Order "belongs to" user and listing, so the data which is stored in order table can relate user_id and listing_id, so administrator (or someone who has right to access) can see who purchased which items. 
-
-
 
 
 ## Provide your database schema design
