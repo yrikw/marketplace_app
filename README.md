@@ -24,7 +24,7 @@ The goal of this project is to reduce food waste at home and provodes an opprtun
 ``` git clone https://github.com/yrikw/marketplace_app.git```
 3. If you don't have homebrew or bundler, go to step 4. If you have them go to step 8 
 4. Install homebrew<br>
-```/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"```
+```/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"``` <br>
 ※ If the terminal asks you password, type password for your Mac login.
 5. Update to make sure if it is installed properly. <br>
 ``` brew update ```
