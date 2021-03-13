@@ -17,6 +17,7 @@ The goal of this project is to reduce food waste at home and provodes an opprtun
 - [Github](https://github.com/yrikw/marketplace_app)
 
 ## Installation
+This application is tested on Mac only<br>
 1. Open terminal on your PC. There are two ways to open. <br>
 - Application -> Utilities -> Terminal.app
 - command + space -> Open spotlight -> Search terminal.app
