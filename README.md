@@ -17,9 +17,29 @@ The goal of this project is to reduce food waste at home and provodes an opprtun
 - [Github](https://github.com/yrikw/marketplace_app)
 
 ## Before you start
-1. Open terminal
-2. Clone a repository
-``` git clone 
+1.Open terminal on your PC. There are two ways to open. <br>
+- Application -> Utilities -> Terminal.app
+- command + space -> Open spotlight -> Search terminal.app
+2. Run git clone to install this application
+``` git clone https://github.com/yrikw/marketplace_app.git```
+3. If you don't have homebrew or bundler, go to step 4. If you have them go to step 8 
+4. Install homebrew
+```/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"```
+* If the terminal asks you password, type password for your Mac login.
+5. Update to make sure if it is installed properly. 
+``` brew update ```
+6. Install bundler
+``` gem install bundler ```
+7. Run 'bundle install' to install dependencies
+``` bundle install ```
+8. Create database and migrate
+```rails db:create ```
+```rails db:migrate ```
+10. Run 'rails s' to see the server 
+``` rails s ```
+9. In your browser, access to below URL to view this application
+``` http://localhost:3000/  ```
+
 
 ## Description of this application
 ### Purpose 
@@ -58,9 +78,8 @@ Buyer can check a details of the purchase and also seller's detail to make sure 
 ### Target audience
 - People who has a kitchen garden
 - People who likes cooking
-- People who started a small food bussiness
 - People who want to buy fresh vegetables and fruits from local area
-- People who want to build a connection in their local community especially if they now work from home due to COIVD-19.
+- People who want to build a connection in their local community especially if they work from home due to COIVD-19
 
 ### Tech stack
 - HTML
