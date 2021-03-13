@@ -16,7 +16,7 @@ The goal of this project is to reduce food waste at home and provodes an opprtun
 - [Heroku](https://share-your-garden.herokuapp.com/)
 - [Github](https://github.com/yrikw/marketplace_app)
 
-## Before you start
+## Installation
 1. Open terminal on your PC. There are two ways to open. <br>
 - Application -> Utilities -> Terminal.app
 - command + space -> Open spotlight -> Search terminal.app
@@ -39,7 +39,6 @@ The goal of this project is to reduce food waste at home and provodes an opprtun
 ``` rails s ```
 9. In your browser, access to below URL to view this application<br>
 ``` http://localhost:3000/  ```
-
 
 ## Description of this application
 ### Purpose 
@@ -69,6 +68,12 @@ In the listing page, there is title, price and location, then if user is interes
 Using Stripe makes the purchasing process smoothly and they can use credit card and it is also tracked. 
 - Buyer can check the receipt after purchase<br>
 Buyer can check a details of the purchase and also seller's detail to make sure if it is correct.
+
+```
+Card number : 4242 4242 4242 4242
+Expiry date : 02/24
+CVC : 444
+```
 
 ### Sitemap
 ![sitemap](docs/sitemap.png)
