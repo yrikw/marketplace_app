@@ -20,12 +20,12 @@ The goal of this project is to reduce food waste at home and provodes an opprtun
 1. Open terminal on your PC. There are two ways to open. <br>
 - Application -> Utilities -> Terminal.app
 - command + space -> Open spotlight -> Search terminal.app
-2. Run git clone to install this application
+2. Run git clone to install this application<br>
 ``` git clone https://github.com/yrikw/marketplace_app.git```
 3. If you don't have homebrew or bundler, go to step 4. If you have them go to step 8 
 4. Install homebrew<br>
 ```/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"```
-* If the terminal asks you password, type password for your Mac login.
+※ If the terminal asks you password, type password for your Mac login.
 5. Update to make sure if it is installed properly. <br>
 ``` brew update ```
 6. Install bundler<br>
