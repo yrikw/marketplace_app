@@ -33,7 +33,7 @@ The goal of this project is to reduce food waste at home and provodes an opprtun
 7. Run 'bundle install' to install dependencies<br>
 ``` bundle install ```
 8. Create database and migrate<br>
-```rails db:create ```
+```rails db:create ```<br>
 ```rails db:migrate ```
 10. Run 'rails s' to see the server<br>
 ``` rails s ```
