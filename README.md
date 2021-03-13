@@ -75,6 +75,14 @@ Buyer can check a details of the purchase and also seller's detail to make sure 
 
 ### Screenhosts
 ![Top1](docs/Top1.png)
+![Top2](docs/Top2.png)
+![Top3](docs/Top3.png)
+![Item](docs/Item.png)
+![Profile1](docs/Profile1.png)
+![Profile2](docs/Profile2.png)
+![Create1](docs/Create1.png)
+![Create2](docs/Create2.png)
+![LogIn](docs/LogIn.png)
 
 ### Target audience
 - People who has a kitchen garden
