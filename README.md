@@ -16,6 +16,11 @@ The goal of this project is to reduce food waste at home and provodes an opprtun
 - [Heroku](https://share-your-garden.herokuapp.com/)
 - [Github](https://github.com/yrikw/marketplace_app)
 
+## Before you start
+1. Open terminal
+2. Clone a repository
+``` git clone 
+
 ## Description of this application
 ### Purpose 
 The purpose of this app is to provide a platform where people can share their homemade food and homegrown vegetables and fruits. It allows to buy cheap and fresh vegetables from local area and make local connections.
