@@ -74,6 +74,7 @@ Buyer can check a details of the purchase and also seller's detail to make sure 
 ![sitemap](docs/sitemap.png)
 
 ### Screenhosts
+![Top1](docs/Top1.png)
 
 ### Target audience
 - People who has a kitchen garden
