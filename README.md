@@ -13,7 +13,7 @@ The food waste is one of the global problem and we need to work on it as a perso
 The goal of this project is to reduce food waste at home and provodes an opprtunity to sell/buy home grown vegetables and other homemade food.  It will also help accelerate local trade market and revitalises local economy. 
 
 ## Links
-- Heroku
+- [Heroku](https://share-your-garden.herokuapp.com/)
 - [Github](https://github.com/yrikw/marketplace_app)
 
 ## Description of this application
