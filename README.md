@@ -114,7 +114,7 @@ CVC : 444
 
 ## User stories
 - [Trello](https://trello.com/b/BFrWUPb8/marketplace-userstory)
-
+![Userstory](docs/user_story.png)
 
 ## Wireframe
 ![wireframe](docs/Marketplace.png)
