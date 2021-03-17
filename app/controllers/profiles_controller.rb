@@ -10,10 +10,8 @@ class ProfilesController < ApplicationController
   def show
     # To show users listing
     user = @profile.user
-    @listings = Listing.where(user: user)
-    @listings = Listing.all.order(created_at: :desc) 
-
-    @orders = Order.where(user_id:current_user) 
+    @listings = Listing.where(user: user).all.order(created_at: :desc) 
+    @orders = Order.where(user_id: current_user) 
   end
 
   # GET /profiles/new

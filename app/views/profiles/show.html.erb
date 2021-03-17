@@ -53,6 +53,7 @@
    </div>
   </div>
 
+  <% if current_user && current_user.id == @profile.user_id %>
   <!-- Purchase history -->
   <h3>Your purchase history </h3>
   <p>Seller may delete items</p>
@@ -79,6 +80,7 @@
       <% end %>    
     </div>
   </div>
+<% end %>
   
 
 
