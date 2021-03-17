@@ -216,6 +216,32 @@ Order "belongs to" user and listing, so the data which is stored in order table 
 
 
 ## Provide your database schema design
+- What is schema file?
+1. Create database.yml (This file is automatically created when you use ```rails new ```)
+2. Run rails db:create (create database based on database.yml)
+3. Create a migration file (xxxxxxxxx_create_blogs.rb) which is also created when you use ```scaffold``` or ```rails g model```
+4. Run rails db:migration (create and edit table based on migration file)
+5. The result of step:4 is reflected in schema.rb
+
+- Which lines in the schema file are used to create 1-many relationships between tables?
+Between two tables, there is a relation as we saw ERD. In listings there are three foregin keys which are category, user and measurement.
+User, category and measurement can have many listings, so listings uses those tables ID as a foregin_key. 
+"Foreign key" allows one column in a table to contain only items from a specific column in a different table.
+```
+create_table "listings", force: :cascade do |t|
+    t.bigint "category_id", null: false
+    t.bigint "measurement_id", null: false
+    t.bigint "user_id", null: false
+  end
+ ```
+
+- What are those t.index lines there for?
+When retrieving data from a specific column, "t.index" makes easy to duplicate and search the data of a specific column in the table.
+Advantages: Data is read and retrieved faster.<br>
+Disadvantages: The speed of writing is doubled.<br>
+It is fast to read and retrieve data by pasting index and organizing columns so that makes easier to search. However there is a process of duplicating the data of the column, so the speed of writing might be doubled. And even if you use index on a column which doesn't have a lot of data, you can't expect the speed will be faster. Basically index is used for a column that is often searched and the stored values are different in a table which stored a big amount of data.
+
+
 ```
 ActiveRecord::Schema.define(version: 2021_03_12_015223) do
 
