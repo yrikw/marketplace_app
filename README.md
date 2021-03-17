@@ -4,9 +4,9 @@ During COVID-19 pandemic, some people started to have their own kitchen garden a
 
 ## Why is it a problem that needs solving?
 There are Problems for food waste according to [Australian government](https://www.environment.gov.au/protection/waste/food-waste#:~:text=Food%20waste%20is%20also%20a%20major%20problem%20in,five%20per%20cent%20of%20Australia%E2%80%99s%20greenhouse%20gas%20emissions.)
-1. Each year there is about 7.3 million tonnes of food waste - this is eqauls to 300 kg per person
-2. Food waste costs the economy about $20 billions each year
-3. Food waste accounts for more than five per cent of Australia’s greenhouse gas emissions
+" 1. Each year there is about 7.3 million tonnes of food waste - this is eqauls to 300 kg per person<br>
+2. Food waste costs the economy about $20 billions each year<br>
+3. Food waste accounts for more than five per cent of Australia’s greenhouse gas emissions "
 <br>
 As I discussed there is no platform to sell home grown vegetables, so people sometimes throw food away even if the food is not expired or uneatble. 
 The food waste is one of the global problem and we need to work on it. In this application, they can sell their vegetables or fruits in their local community and they can also make a connection with someone who has a same interests. 
