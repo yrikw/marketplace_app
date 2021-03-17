@@ -43,7 +43,7 @@ This application is tested on Mac only<br>
 
 ## Description of this application
 ### Purpose 
-The purpose of this app is to provide a platform where people can share their homemade food and homegrown vegetables and fruits. It allows to buy cheap and fresh vegetables from local area and make local connections.
+The purpose of this app is to provide a platform where people can sell their homemade food and homegrown vegetables or fruits. It allows to buy cheap and fresh vegetables from local area and build local connections.
 
 ### Function / Features
 #### User 
@@ -74,6 +74,14 @@ Buyer can check a details of the purchase and also seller's detail to make sure 
 Card number : 4242 4242 4242 4242
 Expiry date : 02/24
 CVC : 444
+```
+
+#### Admin
+- ActiveAdmin is used for admin page ``` http://localhost:3000/admin ```
+This application has an administrator page. Administrator has a right to access this page to delete or update data. 
+``` 
+e-mail : admin@example.com
+password : password
 ```
 
 ### Sitemap
