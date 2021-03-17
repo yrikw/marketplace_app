@@ -1,6 +1,6 @@
 # T2A2 - Marketplace Project
 ## Problem
-Thesedays people stays at home longer than before because of COVID-19 pandemic. People enjoys coooking at home and have a home kitchen garden. There are many platforms for cloth, furnitures and more. However, there is not such a specify platform they can share/sell their home grown vegetables, furits and other food. Also, for some marketplaces the user doesn't have to have a proper profile, so there are many untrustworthy accounts, so people who wants to sell their vegetables or fruits, they have to go to market or sell to restaurants or delis.  Those actions are not easy for most of people especially for someone who enjoys gardening and cooking as thier hobbies. As a result, they might have to throw food away and it causes food waste. 
+During COVID-19 pandemic, some people started to have their own kitchen garden and cook at home more often. There are many platforms for cloth or furnitures. However, there is not such a specify platform they can share/sell their home grown vegetables, furits and home-made food. They can give their friends or neighbors if they have many or sometimes they end up throwing out food but this platform will be a new option for them. They don't need to throw out any food anymore. They just need to sign-up to use.
 
 ## Why is it a problem that needs solving?
 There are Problems for food waste according to [Australian government](https://www.environment.gov.au/protection/waste/food-waste#:~:text=Food%20waste%20is%20also%20a%20major%20problem%20in,five%20per%20cent%20of%20Australia%E2%80%99s%20greenhouse%20gas%20emissions.)
@@ -8,8 +8,8 @@ There are Problems for food waste according to [Australian government](https://w
 2. Food waste costs the economy about $20 billions each year
 3. Food waste accounts for more than five per cent of Australia’s greenhouse gas emissions
 <br>
-As I discussed there is no platform for seller to sell home grown vegetables, so people sometimes throw food away even if the food is not expired or uneatble. 
-The food waste is one of the global problem and we need to work on it as a personal and as a community. In this application, they can sell their vegetables or fruits in thier community and they can also make a connection with someone who has a same interests. 
+As I discussed there is no platform to sell home grown vegetables, so people sometimes throw food away even if the food is not expired or uneatble. 
+The food waste is one of the global problem and we need to work on it. In this application, they can sell their vegetables or fruits in their local community and they can also make a connection with someone who has a same interests. 
 The goal of this project is to reduce food waste at home and provodes an opprtunity to sell/buy home grown vegetables and other homemade food.  It will also help accelerate local trade market and revitalises local economy. 
 
 ## Links
@@ -113,6 +113,7 @@ CVC : 444
 - Unsplash (Free pictures)
 
 ## User stories
+- [Trello](https://trello.com/b/BFrWUPb8/marketplace-userstory)
 
 
 ## Wireframe
