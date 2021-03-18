@@ -1,6 +1,6 @@
 # T2A2 - Marketplace Project
 ## Problem
-During COVID-19 pandemic, some people started to have their own kitchen garden and cook at home more often. There are many platforms for cloth or furnitures. However, there is not such a specify platform they can share/sell their home grown vegetables, furits and home-made food. They can give their friends or neighbors if they have many or sometimes they end up throwing out food but this platform will be a new option for them. They don't need to throw out any food anymore. They just need to sign-up to use.
+During COVID-19 pandemic, some people started to have their own kitchen garden and cook at home more often. There are many platforms for cloth or furnitures. However, there is not such a specify platform they can sell their home grown vegetables, furits and homemade food. They can give their friends or neighbors but this marktetplace application will be a new option. They might have thrown out food if they have too many but they don't need to throw out any food anymore. They just need to sign-up to use.
 
 ## Why is it a problem that needs solving?
 There are Problems for food waste according to [Australian government](https://www.environment.gov.au/protection/waste/food-waste#:~:text=Food%20waste%20is%20also%20a%20major%20problem%20in,five%20per%20cent%20of%20Australia%E2%80%99s%20greenhouse%20gas%20emissions.)<br>
@@ -10,7 +10,7 @@ There are Problems for food waste according to [Australian government](https://w
 
 <br>
 As I discussed there is no platform to sell home grown vegetables, so people sometimes throw food away even if the food is not expired or uneatble. 
-The food waste is one of the global problem and we need to work on it. In this application, they can sell their vegetables or fruits in their local community and they can also make a connection with someone who has a same interests. 
+The food waste is one of the global problem and we need to try not to do it . In this application, they can sell their vegetables or fruits in their local community and they can also make a connection with someone who has same interests. 
 The goal of this project is to reduce food waste at home and provodes an opprtunity to sell/buy home grown vegetables and other homemade food.  It will also help accelerate local trade market and revitalises local economy. 
 
 ## Links
@@ -37,10 +37,12 @@ This application is tested on Mac only<br>
 8. Create database and migrate<br>
 ```rails db:create ```<br>
 ```rails db:migrate ```
-10. Run 'rails s' to see the server<br>
+9. Run 'rails s' to see the server<br>
 ``` rails s ```
-9. In your browser, access to below URL to view this application<br>
+10. In your browser, access to below URL to view this application<br>
 ``` http://localhost:3000/  ```
+11. For stripe, you need to use this command on a different tab in terminal.
+``` ultrahook stripe 3000 ```
 
 ## Description of this application
 ### Purpose 
@@ -49,19 +51,21 @@ The purpose of this app is to provide a platform where people can sell their hom
 ### Function / Features
 #### User 
 - Sign up to use all functions<br>
-Users can see items withour sign-up but they need to sign-up. 
+Users can see items without sign-up but they need to sign-up to use all functions. 
 - Only user who has profile detail can share items<br>
 To share items, user needs to fill profile details. 
 - Buyer can view a seller's profile, picture and item list<br>
 Buyer can see the seller's detail so they can know what kind of person seller is and if they can trust the items/seller. Buyer can buy items without worry. 
 - User can have more than one items<br>
-User can share items as many as they want and also choose quantity, so they can sell from small amount.
+User can share items as many as they want and also choose quantity. They can sell from small amount.
+- User can update/create profile and location in the same form. 
+They can save the data at the same time.
 
 #### Listing
-- A search form that user can search items by item title, category or/and suburb in listing page<br>
-Buyer can search items in search form, then they can find what they want efficiently and it makes them exploring the application.
+- A search form that user can search items by title, category or/and suburb in listing page<br>
+Buyer can search items in search form, then they can find what they want efficiently.
 - A top page displays new item list<br>
-User can check all new items on the top page. If they check the application constantly, they just can see top page.
+User can check new items in the top page. If they check the application constantly, they just can see top page.
 - User can see a item brief overview in a listing page and then click "See more" to see more details and buy the item. The details include title, price, place and description.<br>
 In the listing page, there is title, price and location, then if user is interested in the item, they can click "See more" to read a detail of the item. Also, even if they use smartphone, the design is two colums so they don't have to scroll one by one. 
 
@@ -103,7 +107,7 @@ password : password
 - People who has a kitchen garden
 - People who likes cooking
 - People who want to buy fresh vegetables and fruits from local area
-- People who want to build a connection in their local community especially if they work from home due to COIVD-19
+- People who want to build a connection in their local community especially someone who lives alone or new to Melbourne
 
 ### Tech stack
 - HTML
@@ -129,11 +133,11 @@ password : password
 ![wireframe](docs/Marketplace.png)
 
 ## Explain the different high-level components (abstractions) in your app
-This application is created with Ruby one Rails.　Models, views, and controllers are called MVC architectures。 Models (the part that deals with data), views (the part that produces user-visible results), and controllers (which process user requests and work with models and views). How MVC works in this applicatio is requests from users will be received as URLs. The "routes.rb" file is used to analyze the URL received and determine which controller should perform the action. This file enumerates which action to call on which controller when it is any URL. A model is provided for each table in a database. Actions in user requests interact with the database through the model to retrieve data or store new data. The data retrieved through the model and change it into a variable. The view creates an HTML document using the data passed through the variable. 
+This application is created with Ruby one Rails.　Models, views, and controllers are called MVC architectures. Models (the part that deals with data), views (the part that produces user-visible results), and controllers (which process user requests and work with models and views). How MVC works in this applicatio is requests from users will be received as URLs. The "routes.rb" file is used to analyze the URL received and determine which controller should perform the action. This file enumerates which action to call on which controller when it is any URL. A model is provided for each table in a database. Actions in user requests interact with the database through the model to retrieve data or store a new data. The data retrieved through the model and change it into a variable. The view creates an HTML document using the data passed through the variable. 
 
 ## Detail any third party services that your app will use
 - Device<br>
-Device is installed to handle user authentication and user account creation. User can sign-up with their e-mail and password, then they can create a profile detail. In the application, "current_user" is used to share items, purchase items and create a profile. This allows to show the functions only sign-up user can use.
+Device is installed to handle user authentication and user account creation. Users can sign-up with their e-mail and password, then they can create a profile detail. In the application, "current_user" is used to share items, purchase items and create a profile. This allows to show the functions only sign-up user can use.
 
 - Amazon S3<br>
 Amazon S3 is one of the object storage service that provides data availability, security and performance. In this application, this is used for image upload. It allows user to upload many images and stored them with a strong security. 
@@ -143,7 +147,7 @@ Stripe allows to handle payment system. User can purchase items and pay thorugh 
 
 
 ## Describe your projects models in terms of the relationships (active record associations) they have with each other
-In this project, there are listing model, category model, measurement model, user model, order model, profile model and location mode. In those models, there is defined how to make relations between different databases and also the data should be stored. For example, user can have many listing items. Listing item is included category and measurements. When the user wants to delete the item, the data in category and measurement should be deleted too. However if the models don't have relationships each other, we have to write a code for each database so to define the relationship makes  code simpler and easier. For user, user can have one profile and location belongs to the profile. If we use "accepts_nested_attributes_for", it allows to save profile data and location data in the same view. 
+In this project, there are listing model, category model, measurement model, user model, order model, profile model and location mode. In those models, there is defined how to make relations between different databases and also how the data should be stored. For example, user can have many listing items. Listing item is included category and measurements. When the user wants to delete the item, the data in category and measurement should be deleted too. However if the models don't have relations each other, we have to write a code for each database so to define the relations make code simpler and easier. For user, user can have one profile and location belongs to the profile. If we use "accepts_nested_attributes_for", it allows to save profile data and location data in the same view(form). 
 
 - User
 ``` 
@@ -206,13 +210,13 @@ end
 
 ### Listing 
 Listing has relations with category, measurement, order and user.
-To make an item list, user needs to choose one category and one measurement, so listing can not be created without them. "has_many" is used for category and measurement because they can have many items for each colums. If a user deletes a listing item, the related data has to be also deleted from category and measurement tables. 
+To make an item list, user needs to choose one category and one measurement, so listing can not be created without them. "has_many" is used for category and measurement because they can have many items for each colums. If user deletes a listing item, the related data has to be also deleted from category and measurement tables. 
 
 ### User
-User can have only one profile in this applicationn and they can create many listing items. The profile has to have a user and locaton has to have a profile. "has_one" is used for profile and location, so user can have only one profile and one location. 
+User can have only one profile in this applicationn and they can create many listing items. The profile has to have a user and location has to have a profile. "has_one" is used for profile and location, so user can have only one profile and one location. 
 
 ### Order
-Order "belongs to" user and listing, so the data which is stored in order table can relate user_id and listing_id, so administrator (or someone who has right to access) can see who purchased which items. 
+Order "belongs to" user and listing, so the data which is stored in order table can relate user_id and listing_id, so administrator (or someone who has right to access) can see who purchased or which items are sold. 
 
 
 ## Provide your database schema design
