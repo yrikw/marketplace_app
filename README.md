@@ -1,6 +1,6 @@
 # T2A2 - Marketplace Project
 ## Problem
-During COVID-19 pandemic, some people started to have their own kitchen garden and cook at home more often. There are many platforms for cloth or furnitures. However, there is not such a specify platform they can sell their home grown vegetables, furits and homemade food. They can give their friends or neighbors but this marktetplace application will be a new option. They might have thrown out food if they have too many but they don't need to throw out any food anymore. They just need to sign-up to use.
+During COVID-19 pandemic, some people started to have their own kitchen gardens and cook at home more often. There are many platforms for cloth or furnitures. However, there is not such a specify platform they can sell their home grown vegetables, furits and homemade food. They can give their friends or neighbors but this marktetplace application will be a new option. They might have thrown out food if they have too many but they don't need to throw out any food anymore. They just need to sign-up to use.
 
 ## Why is it a problem that needs solving?
 There are Problems for food waste according to [Australian government](https://www.environment.gov.au/protection/waste/food-waste#:~:text=Food%20waste%20is%20also%20a%20major%20problem%20in,five%20per%20cent%20of%20Australia%E2%80%99s%20greenhouse%20gas%20emissions.)<br>
@@ -24,7 +24,7 @@ This application is tested on Mac only<br>
 - command + space -> Open spotlight -> Search terminal.app
 2. Run git clone to install this application<br>
 ``` git clone https://github.com/yrikw/marketplace_app.git```
-3. If you don't have homebrew or bundler, go to step 4. If you have them go to step 8 
+3. If you don't have homebrew or bundler, go to step 4. If you have them, go to step 8 
 4. Install homebrew<br>
 ```/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"``` <br>
 ※ If the terminal asks you password, type password for your Mac login.
@@ -43,6 +43,9 @@ This application is tested on Mac only<br>
 ``` http://localhost:3000/  ```
 11. For stripe, you need to use this command on a different tab in terminal.
 ``` ultrahook stripe 3000 ```
+
+## Recording
+There is a video in docs.
 
 ## Description of this application
 ### Purpose 
