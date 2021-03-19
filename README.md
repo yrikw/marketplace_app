@@ -44,7 +44,7 @@ This application is tested on Mac only<br>
 11. For stripe, you need to use this command on a different tab in terminal.
 ``` ultrahook stripe 3000 ```
 
-## Recording
+## Screen Recording
 There is a video in docs.
 
 ## Description of this application
@@ -53,7 +53,7 @@ The purpose of this app is to provide a platform where people can sell their hom
 
 ### Function / Features
 #### User 
-- Sign up to use all functions<br>
+- Sign up and create a profile to use all functions<br>
 Users can see items without sign-up but they need to sign-up to use all functions. 
 - Only user who has profile detail can share items<br>
 To share items, user needs to fill profile details. 
@@ -71,6 +71,8 @@ Buyer can search items in search form, then they can find what they want efficie
 User can check new items in the top page. If they check the application constantly, they just can see top page.
 - User can see a item brief overview in a listing page and then click "See more" to see more details and buy the item. The details include title, price, place and description.<br>
 In the listing page, there is title, price and location, then if user is interested in the item, they can click "See more" to read a detail of the item. Also, even if they use smartphone, the design is two colums so they don't have to scroll one by one. 
+- Two columns for smartphone
+It's easier to search items if the cloumn is two. User doesn't need to scroll  many times.
 
 #### Payment
 - This application uses Stripe as a third party<br>
@@ -86,7 +88,7 @@ CVC : 444
 
 #### Admin
 - ActiveAdmin is used for admin page ``` http://localhost:3000/admin ```
-This application has an administrator page. Administrator has a right to access this page to delete or update data. 
+This application has an administrator page. Administrator has a right to access this page to delete or update data for user and listing.
 ``` 
 e-mail : admin@example.com
 password : password
