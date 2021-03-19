@@ -129,7 +129,7 @@ password : password
 - Unsplash (Free pictures)
 
 ## User stories
-- [Trello](https://trello.com/b/BFrWUPb8/marketplace-userstory)
+- [Trello](https://trello.com/b/BFrWUPb8/marketplace-userstory)<br>
 ![Userstory](docs/user_story.png)
 
 ## Wireframe
