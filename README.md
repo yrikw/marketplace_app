@@ -207,7 +207,7 @@ end
 
 ## Discuss the database relations to be implemented in your application
 ## ERD
-![ERD](docs/erd.png)
+![ERD](docs/marketplace.png)
 
 ### Listing 
 Listing has relations with category, measurement, order and user.
