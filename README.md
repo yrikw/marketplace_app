@@ -133,7 +133,7 @@ password : password
 ![wireframe](docs/Marketplace.png)
 
 ## Explain the different high-level components (abstractions) in your app
-This application is created with Ruby one Rails.　Models, views, and controllers are called MVC architectures. Models (the part that deals with data), views (the part that produces user-visible results), and controllers (which process user requests and work with models and views). How MVC works in this applicatio is requests from users will be received as URLs. The "routes.rb" file is used to analyze the URL received and determine which controller should perform the action. This file enumerates which action to call on which controller when it is any URL. A model is provided for each table in a database. Actions in user requests interact with the database through the model to retrieve data or store a new data. The data retrieved through the model and change it into a variable. The view creates an HTML document using the data passed through the variable. 
+This application is created with Ruby on Rails.　Models, views, and controllers which is called MVC architectures. Models (the part that deals with data), views (the part that produces user-visible results), and controllers (which process user requests and work with models and views). How MVC works in this application is requests from users will be received as URLs. The "routes.rb" file is used to analyze the URL received and determine which controller should perform the action. This file enumerates which action to call on which controller. A model is provided for each table in a database. Actions in user requests interact with the database through the model to retrieve data or store a new data. The data retrieved through the model and change it into a variable. The view creates an HTML document using the data passed through the variable. There is a data in column of the table, and user can request to save, show or delete the data in the view.
 
 ## Detail any third party services that your app will use
 - Device<br>
@@ -201,8 +201,6 @@ class Order < ApplicationRecord
   belongs_to :listing
 end
 ```
-
-
 
 ## Discuss the database relations to be implemented in your application
 ## ERD
