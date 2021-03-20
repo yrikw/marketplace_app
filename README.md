@@ -220,11 +220,13 @@ Listing has relations with category, measurement, order and user.
 To make an item list, user needs to choose one category and one measurement, so listing can not be created without them. "has_many" is used for category and measurement because they can have many items for each colums. If user deletes a listing item, the related data has to be also deleted from category and measurement tables. 
 
 ### User
-User can have only one profile in this applicationn and they can create many listing items. The profile has to have a user and location has to have a profile. "has_one" is used for profile and location, so user can have only one profile and one location. 
+User can have only one profile in this applicationn and they can create many listing items. The profile has to have a user and location has to have a profile. "has_one" is used for profile and location, so each user has only one profile and one location. 
 
 ### Order
-Order "belongs to" user and listing, so the data which is stored in order table can relate user_id and listing_id, so administrator (or someone who has right to access) can see who purchased or which items are sold. 
+Order "belongs to" user and listing, so the data which is stored in order table can relate user_id and listing_id, so administrator (or someone who has right to access) can see who purchased or which items are sold.
 
+### Message (still in progress)
+Message "belongs to user and conversation. User can have many but one message can have one user_id. There is sender_id and recipient_id. User doesn't have to sent message if they don't need to so, the relationship is an optional.
 
 ## Provide your database schema design
 - What is schema file?
