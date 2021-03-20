@@ -252,7 +252,7 @@ Message "belongs to user and conversation. User can have many but one message ca
 4. Run rails db:migration (create and edit table based on migration file)
 5. The result of step:4 is reflected in schema.rb
 In schema file we can see the structure of tables(data) within a relational database. 
-<br>
+
 - Which lines in the schema file are used to create 1-many relationships between tables?
 Between two tables, there is a relation as we saw ERD. In listings there are three foregin keys which are category, user and measurement.
 User, category and measurement can have many listings, so listings uses those tables ID as a foregin_key. 
