@@ -86,6 +86,10 @@ Expiry date : 02/24
 CVC : 444
 ```
 
+#### Message system (still in progess)
+- User can sent a message each other<br>
+User can ask questions or talk each other
+
 #### Admin
 - ActiveAdmin is used for admin page ``` http://localhost:3000/admin ```
 This application has an administrator page. Administrator has a right to access this page to delete or update data for user and listing.
@@ -107,6 +111,7 @@ password : password
 ![Create1](docs/Create1.png)
 ![Create2](docs/Create2.png)
 ![LogIn](docs/LogIn.png)
+![message](docs/message1.png)
 
 ### Target audience
 - People who has a kitchen garden
