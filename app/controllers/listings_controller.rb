@@ -23,6 +23,11 @@ class ListingsController < ApplicationController
     if params[:location].present?
       @listings = @listings.find_by_location params[:location]
     end
+
+    # Location search by suburb
+    if params[:purchased].present?
+      @listings = @listings.find_by_sale params[:purchased]
+    end
   end
 
   # GET /listings/1 or /listings/1.json

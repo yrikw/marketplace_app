@@ -12,6 +12,7 @@ class ProfilesController < ApplicationController
     user = @profile.user
     @listings = Listing.where(user: user).all.order(created_at: :desc) 
     @orders = Order.where(user_id: current_user) 
+    @users = User.all
   end
 
   # GET /profiles/new
