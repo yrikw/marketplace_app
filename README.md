@@ -230,7 +230,7 @@ class Conversation < ActiveRecord::Base
 
 ## Discuss the database relations to be implemented in your application
 ## ERD
-![ERD](docs/erd.png)
+![ERD](docs/ERD.png)
 ### Listing 
 - has one category (required)
 - has one measurement (required)
