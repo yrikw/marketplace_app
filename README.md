@@ -37,7 +37,8 @@ This application is tested on Mac only<br>
 ``` bundle install ```
 8. Create database and migrate<br>
 ```rails db:create ```<br>
-```rails db:migrate ```
+```rails db:migrate ```<br>
+```rails db:seed ```
 9. Run 'rails s' to see the server<br>
 ``` rails s ```
 10. In your browser, access to below URL to view this application<br>
@@ -158,7 +159,7 @@ Stripe allows to handle payment system. User can purchase items and pay thorugh 
 
 
 ## Describe your projects models in terms of the relationships (active record associations) they have with each other
-In this project, there are listing model, category model, measurement model, user model, order model, profile model and location mode. In those models, there is defined how to make relations between different databases and also how the data should be stored. For example, user can have many listing items. Listing item is included category and measurements. When the user wants to delete the item, the data in category and measurement should be deleted too. However if the models don't have relations each other, we have to write a code for each database so to define the relations make code simpler and easier. For user, user can have one profile and location belongs to the profile. If we use "accepts_nested_attributes_for", it allows to save profile data and location data in the same view(form). 
+In this project, there are listing model, category model, measurement model, user model, order model, profile model, location model, message model and coversaton model. In those models, there is definition that how to make relations between different databases and also how the data should be stored. For example, user can have many listing items. Listing item is included category and measurements. When the user wants to delete the item, the data in category and measurement should be deleted too. However if the models don't have relations each other, we have to write a code for each database so to define the relations make code simpler and easier. For user, user can have one profile and location belongs to the profile. If we use "accepts_nested_attributes_for", it allows to save profile data and location data in the same view(form). 
 
 - User
 ``` 
@@ -176,6 +177,7 @@ class Profile < ApplicationRecord
   accepts_nested_attributes_for :location
 end
 ```
+
 - Location
 ``` 
 class Location < ApplicationRecord
@@ -232,39 +234,40 @@ class Conversation < ActiveRecord::Base
 ## ERD
 ![ERD](docs/ERD.png)
 ### Listing 
-- has one category (required)
-- has one measurement (required)
-- has one order (optional)
-- has one user (required)
+- has one category (required) one to many 
+- has one measurement (required) one to many 
+- has one order (optional)  one to one or none
+- has one user (required) 
 
 ### Category
-- has many listing (optional)
+- has many listing (optional) 
 
 ### Measurement
-- has many listing (optional)
+- has many listing (optional) 
 
 ### User
-- has many listing (optional)
-- has one profile  (optional)
+- has many listing (optional) one to many or none
+- has one profile  (optional) one to one or none
 
 ### Profile
-- has one location (required)
+- has one location (required) one to one
 - belongs to  user  (required)
 
 ### Location
 - belongs to profile (required)
 
 ### Order(Payment)
-- has one user (required)
-- has one conversation  (required)
+- has one user (required) one to one 
+- has one listing  (required) one to one
 
 ### Conversation
 - belongs to message (required)
 
-### message
+### Message
 - has one listing (optional)
 - has one profile  (optional)
 
+#### In this picture, mandatory = required
 ![relationships](docs/relations.png)
 
 ## Provide your database schema design
