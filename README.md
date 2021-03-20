@@ -232,17 +232,40 @@ class Conversation < ActiveRecord::Base
 ## ERD
 ![ERD](docs/erd.png)
 ### Listing 
-Listing has relations with category, measurement, order and user.
-To make an item list, user needs to choose one category and one measurement, so listing can not be created without them. "has_many" is used for category and measurement because they can have many items for each colums. If user deletes a listing item, the related data has to be also deleted from category and measurement tables. 
+- has one category (required)
+- has one measurement (required)
+- has one order (optional)
+- has one user (required)
+
+### Category
+- has many listing (optional)
+
+### Measurement
+- has many listing (optional)
 
 ### User
-User can have only one profile in this applicationn and they can create many listing items. The profile has to have a user and location has to have a profile. "has_one" is used for profile and location, so each user has only one profile and one location. 
+- has many listing (optional)
+- has one profile  (optional)
 
-### Order
-Order "belongs to" user and listing, so the data which is stored in order table can relate user_id and listing_id, so administrator (or someone who has right to access) can see who purchased or which items are sold.
+### Profile
+- has one location (required)
+- belongs to  user  (required)
 
-### Message (still in progress)
-Message "belongs to user and conversation. User can have many but one message can have one user_id. There is sender_id and recipient_id. User doesn't have to sent message if they don't need to so, the relationship is an optional.
+### Location
+- belongs to profile (required)
+
+### Order(Payment)
+- has one user (required)
+- has one conversation  (required)
+
+### Conversation
+- belongs to message (required)
+
+### message
+- has one listing (optional)
+- has one profile  (optional)
+
+![relationships](docs/relations.png)
 
 ## Provide your database schema design
 - What is schema file?
