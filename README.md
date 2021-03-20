@@ -210,7 +210,6 @@ end
 ## Discuss the database relations to be implemented in your application
 ## ERD
 ![ERD](docs/erd.png)
-
 ### Listing 
 Listing has relations with category, measurement, order and user.
 To make an item list, user needs to choose one category and one measurement, so listing can not be created without them. "has_many" is used for category and measurement because they can have many items for each colums. If user deletes a listing item, the related data has to be also deleted from category and measurement tables. 
