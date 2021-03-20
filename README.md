@@ -211,6 +211,21 @@ class Order < ApplicationRecord
   belongs_to :listing
 end
 ```
+- Message
+```
+class Message < ActiveRecord::Base
+    belongs_to :conversation
+    belongs_to :user
+end
+```
+- Conversation
+```
+class Conversation < ActiveRecord::Base
+   belongs_to :sender, :foreign_key => :sender_id, class_name: 'User'
+   belongs_to :recipient, :foreign_key => :recipient_id, class_name: 'User'
+   has_many :messages, dependent: :destroy
+ end
+```
 
 ## Discuss the database relations to be implemented in your application
 ## ERD
