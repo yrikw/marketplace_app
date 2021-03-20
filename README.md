@@ -423,7 +423,9 @@ end
 ```
 
 ## Describe the way tasks are allocated and tracked in your project
-- [Trello](https://trello.com/b/ye2jpXz9/marketplace)
+- [Trello](https://trello.com/b/ye2jpXz9/marketplace)<br>
+This project is tracked via Trello. Each tasks are created as a card in the board. In the card, there is a due day, check lists, priority label, so I cann track which one is high priority and how I can progress. If it is in progress, I moved to "Progress" and once it is done, I moved to "Completed". Screenshots are below:<br>
+Also, I used this Github repoditory to update my code. Every steps I pushed the code, so the push history can be tracked and we can check where/how the code and file was changed every time.
 ![26/2](docs/26:2.png)
 ![27/2](docs/27:2.png)
 ![28/2](docs/28:2.png)
