@@ -1,3 +1,4 @@
+### Message system is still in progress
 # T2A2 - Marketplace Project
 ## Problem
 During COVID-19 pandemic, some people started to have their own kitchen gardens and cook at home more often. There are many platforms for cloth or furnitures. However, there is not such a specify platform they can sell their home grown vegetables, furits and homemade food. They can give their friends or neighbors but this marktetplace application will be a new option. They might have thrown out food if they have too many but they don't need to throw out any food anymore. They just need to sign-up to use.
