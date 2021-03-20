@@ -6,7 +6,7 @@
      <%= form_tag(listings_path, method: "get") do %>
        <%= text_field_tag :title, params[:title], class:"mr-3", placeholder: "Item name" %>
        <%= text_field_tag :location, params[:location], class:"mr-3", placeholder: "Suburb" %>
-       <%= select_tag :category, options_for_select(Category.all.map{|o| [o.name, o.id]}), include_blank: true, class:"mr-3", placeholder: "Category" %>
+       <%= select_tag :category, options_for_select(Category.all.map{|o| [o.name, o.id]}), class:"mr-3", placeholder: "Category" %>
        <%= submit_tag "Search", class:"submit btn"%>
       <% end %>
    </div>
@@ -26,7 +26,7 @@
           <h5><%= listing.title %></h5>
           <h5>$<%= listing.price %></h5>
           <p class="text-right"><i class="fas fa-map-marker-alt"></i>  <%= listing.user.profile.location.suburb %></p>
-          <%= link_to "See More", listing_path(listing.id), class: "btn btn-block"%>
+          <%= link_to "See More", listing_path(listing.id), class: "btn btn-block" %>
            <p class="card-subtitle my-2 text-muted text-right"><%= time_ago_in_words(listing.created_at) %> ago</p>
         </div>
      </div>

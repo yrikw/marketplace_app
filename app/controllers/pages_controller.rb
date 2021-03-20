@@ -1,14 +1,7 @@
 class PagesController < ApplicationController
   def home
   # Show 4 new items 
-     @listings = Listing.all.order(created_at: :desc) 
-     @results = []
-     @listings.each_with_index do |item, index|
-        @results << item
-        if @results.length >= 4 
-        return @results
-        end
-      end
+     @listings = Listing.all.order(created_at: :desc).first(4)
   end
 
   # To get data from table for payment success page 
