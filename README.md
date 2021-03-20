@@ -251,6 +251,8 @@ Message "belongs to user and conversation. User can have many but one message ca
 3. Create a migration file (xxxxxxxxx_create_blogs.rb) which is also created when you use ```scaffold``` or ```rails g model```
 4. Run rails db:migration (create and edit table based on migration file)
 5. The result of step:4 is reflected in schema.rb
+<br>
+In schema file we can see the structure of tables(data) within a relational database. 
 
 - Which lines in the schema file are used to create 1-many relationships between tables?
 Between two tables, there is a relation as we saw ERD. In listings there are three foregin keys which are category, user and measurement.
