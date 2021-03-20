@@ -10,7 +10,7 @@
     <% else %>
       <% recipient = User.find(conversation.sender_id) %>
     <% end %>
-      <%= link_to conversation.recipient.id, conversation_messages_path(conversation)%><br>
+      <%= link_to conversation.recipient.profile.firstname.split.map(&:capitalize).join(' '), conversation_messages_path(conversation)%><br>
   <% end %>
   <% end %>
   </div>
