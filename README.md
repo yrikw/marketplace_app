@@ -168,6 +168,7 @@ class User < ApplicationRecord
   has_many :listings
 end
 ```
+User can have many listings but they can create only one profile.
 - Profile
 ``` 
 class Profile < ApplicationRecord
@@ -177,6 +178,7 @@ class Profile < ApplicationRecord
   accepts_nested_attributes_for :location
 end
 ```
+Profile belongs to user and store user_id with each profile. User can upload one picture for profile page. When they update profile, they can also update "location" in the same form because "accepts_nested_attributes_for" is used. 
 
 - Location
 ``` 
@@ -184,6 +186,7 @@ class Location < ApplicationRecord
   belongs_to :profile
 end
 ```
+Location belongs to profile, so user can't update only location.
 - Listing
 
 ``` 
@@ -195,18 +198,21 @@ class Listing < ApplicationRecord
   has_one :order, dependent: :destroy
 end
  ```
+ Listing has one category and one measurement. Also, the each data is stored with user_id, so administrator can see who upload the item. 
  - Category
 ``` 
 class Category < ApplicationRecord
     has_many :listings
 end
 ```
+Listing has one category and category table can store many listings. It allows to seacrh by category easier.
 - Measurement
  ```
 class Measurement < ApplicationRecord
     has_many :listings
 end
 ```
+Listing has one measurement and measurement table can store many listings.
 - Order
 ```
 class Order < ApplicationRecord
@@ -214,6 +220,7 @@ class Order < ApplicationRecord
   belongs_to :listing
 end
 ```
+Order table stores user and listing together, so we can track who bought which items.
 - Message
 ```
 class Message < ActiveRecord::Base
@@ -221,6 +228,7 @@ class Message < ActiveRecord::Base
     belongs_to :user
 end
 ```
+Message has sender and recipient so it belongs to conversation. Also, it belongs to user too.
 - Conversation
 ```
 class Conversation < ActiveRecord::Base
@@ -229,7 +237,7 @@ class Conversation < ActiveRecord::Base
    has_many :messages, dependent: :destroy
  end
 ```
-
+In conversation model, it defines sender and recipient which are used user. Conversation cann have many messages. It allows user to have a mailbox to send messages each other.
 ## Discuss the database relations to be implemented in your application
 ## ERD
 ![ERD](docs/ERD.png)
